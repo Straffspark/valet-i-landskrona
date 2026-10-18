@@ -122,12 +122,38 @@ select { font: inherit; font-size: .85rem; color: var(--ink); background: var(--
 .foot { color: var(--ink-2); font-size: .72rem; line-height: 1.5; }
 @media (prefers-reduced-motion: no-preference) { .fill, .row .mini div { transition: width .35s ease; } }
 .foot a { color: var(--sea); }
+.lock { position: fixed; inset: 0; z-index: 50; background: var(--bar); color: var(--bar-ink); display: flex; align-items: center; justify-content: center; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.lock form { width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
+.lock .logo { width: 64px; height: 64px; border-radius: 15px; }
+.lock h1 { margin: 4px 0 0; font-family: var(--f-display); font-variation-settings: "wdth" 70; font-weight: 800; font-size: 2rem; line-height: 1.05; }
+.lock p { margin: 0; font-size: .9rem; opacity: .8; }
+.lock label { font-family: var(--f-data); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; opacity: .8; margin-top: 8px; }
+.lock input[type=password] { font: inherit; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: var(--bar-ink); }
+.lock input[type=password]:focus { outline: none; border-color: var(--bar-ink); }
+.lock .rem { display: flex; align-items: center; gap: 8px; font-family: var(--f-body); text-transform: none; letter-spacing: 0; font-size: .85rem; margin: 0; }
+.lock button { font: inherit; font-size: 1rem; font-weight: 700; padding: 12px; border: 0; border-radius: 12px; background: var(--bar-ink); color: var(--bar); cursor: pointer; }
+.lock button:disabled { opacity: .6; }
+.lock .err { color: #ffb4a3; font-size: .85rem; min-height: 1.2em; }
+.lock-out { font: inherit; font-size: .75rem; background: none; border: 0; color: var(--ink-2); text-decoration: underline; padding: 0; cursor: pointer; }
 .dl { display: flex; flex-wrap: wrap; gap: 8px; }
 .dl a { flex: 1 1 9rem; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: .82rem; font-weight: 600; }
 .dl a span { display: block; font-family: var(--f-data); font-weight: 400; font-size: .68rem; color: var(--ink-2); margin-top: 2px; }
 </style>
 </head>
 <body>
+<div class="lock" id="lock">
+  <form id="lock-form" autocomplete="on">
+    <img class="logo" src="icons/icon-192.png" alt="">
+    <h1>Valet i Landskrona</h1>
+    <p>Ange lösenordet för att öppna appen.</p>
+    <input type="text" name="username" value="Valet i Landskrona" autocomplete="username" hidden>
+    <label for="lock-pw">Lösenord</label>
+    <input type="password" id="lock-pw" autocomplete="current-password" required>
+    <label class="rem"><input type="checkbox" id="lock-rem" checked> Kom ihåg på den här enheten</label>
+    <div class="err" id="lock-err" role="alert"></div>
+    <button type="submit" id="lock-btn">Öppna</button>
+  </form>
+</div>
 
 <div class="app">
   <header class="top">
@@ -147,9 +173,65 @@ select { font: inherit; font-size: .85rem; color: var(--ink); background: var(--
   </nav>
 </div>
 
-<script src="data.js"></script>
 <script>
 (() => {
+  const KEY = 'lk.key';
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  const tob64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+  let meta = null;
+  const getMeta = async () => meta || (meta = await fetch('data.enc.json', {cache: 'no-cache'}).then((r) => { if (!r.ok) throw new Error('net'); return r.json(); }));
+  const derive = async (pw, m) => {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({name: 'PBKDF2', hash: 'SHA-256', salt: b64(m.salt), iterations: m.iter}, base, {name: 'AES-GCM', length: 256}, true, ['decrypt']);
+  };
+  const decryptData = async (key, m) => JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name: 'AES-GCM', iv: b64(m.iv)}, key, b64(m.ct))));
+  const open = (data, key) => {
+    window.LK = data; window.lkKey = key;
+    document.getElementById('lock').hidden = true;
+    window.lkStart();
+  };
+  // Krypterade nedladdningar: hämta, dekryptera i webbläsaren, spara som fil.
+  window.lkDownload = async (a) => {
+    const name = a.dataset.file;
+    const old = a.style.opacity; a.style.opacity = .6;
+    try {
+      const buf = new Uint8Array(await fetch('nedladdning/' + name + '.enc').then((r) => r.arrayBuffer()));
+      const plain = await crypto.subtle.decrypt({name: 'AES-GCM', iv: buf.slice(0, 12)}, window.lkKey, buf.slice(12));
+      const url = URL.createObjectURL(new Blob([plain], {type: a.dataset.type}));
+      const link = document.createElement('a'); link.href = url; link.download = name; document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    } catch (e) { alert('Filen kunde inte hämtas. Kontrollera nätverket och försök igen.'); }
+    a.style.opacity = old;
+  };
+  window.lkLogout = () => { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); };
+  const form = document.getElementById('lock-form'), err = document.getElementById('lock-err'), btn = document.getElementById('lock-btn'), pw = document.getElementById('lock-pw');
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault(); err.textContent = ''; btn.disabled = true; btn.textContent = 'Öppnar…';
+    try {
+      const m = await getMeta();
+      const key = await derive(pw.value, m);
+      let data;
+      try { data = await decryptData(key, m); } catch (e) { err.textContent = 'Fel lösenord. Försök igen.'; pw.select(); return; }
+      if (document.getElementById('lock-rem').checked) { try { localStorage.setItem(KEY, tob64(await crypto.subtle.exportKey('raw', key))); } catch (e) {} }
+      open(data, key);
+    } catch (e) {
+      err.textContent = 'Datan kunde inte hämtas. Kontrollera nätverket och försök igen.';
+    } finally { btn.disabled = false; btn.textContent = 'Öppna'; }
+  });
+  // Försök öppna automatiskt med sparad nyckel.
+  (async () => {
+    let saved = null; try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (!saved) { pw.focus(); return; }
+    try {
+      const key = await crypto.subtle.importKey('raw', b64(saved), {name: 'AES-GCM'}, true, ['decrypt']);
+      const m = await getMeta();
+      open(await decryptData(key, m), key);
+    } catch (e) { try { localStorage.removeItem(KEY); } catch (x) {} pw.focus(); }
+  })();
+})();
+</script>
+<script>
+window.lkStart = () => {
   const L = window.LK;
   const C = {S:'#E8112D', M:'#4FB3E3', SD:'#C9B400', V:'#9B1B1F', L:'#006AB3', C:'#009933', KD:'#2C3E8C', MP:'#5DA82B', Vi:'#8A5CC2', 'Övr':'#9A9A9A', PNy:'#7a7a7a'};
   const NAME = {S:'Socialdemokraterna', M:'Moderaterna', SD:'Sverigedemokraterna', V:'Vänsterpartiet', L:'Liberalerna', C:'Centerpartiet', KD:'Kristdemokraterna', MP:'Miljöpartiet', Vi:'Visionpartiet', 'Övr':'Övriga', PNy:'Partiet Nyans'};
@@ -238,8 +320,8 @@ select { font: inherit; font-size: .85rem; color: var(--ink); background: var(--
         <div class="legend">${order.filter((p) => m26[p] || m22[p]).map((p) => `<span><i style="background:${C[p]}"></i>${p} ${m26[p] || 0}${(m26[p] || 0) - (m22[p] || 0) ? ' (' + ((m26[p] || 0) - (m22[p] || 0) > 0 ? '+' : '−') + Math.abs((m26[p] || 0) - (m22[p] || 0)) + ')' : ''}</span>`).join('')}</div></div>`;
     }
     html += `<div class="card"><h2>Röstdelning</h2><p class="note">Samma väljare, olika val. Andel 2026 i hela Landskrona.</p><div class="tbl"><table><thead><tr><th>Parti</th><th>Kommun</th><th>Region</th><th>Riksdag</th></tr></thead><tbody>${['L', 'S', 'SD', 'M', 'V', 'KD', 'C', 'MP'].map((p) => `<tr><td><b style="color:${p === 'SD' ? 'var(--ink)' : C[p]}">${p}</b> ${NAME[p]}</td>${['KF', 'RF', 'RD'].map((v) => `<td>${f1(L.R[v]['1282'].p[p][0])}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
-    html += `<div class="card"><h2>Ladda ner</h2><p class="note">Rådata och rapport med hela tidsserien 2006–2026.</p><div class="dl"><a href="nedladdning/Landskrona_val2026_radata.xlsx" download>Rådata<span>Excel · alla val och distrikt</span></a><a href="nedladdning/Valet_2026_i_Landskrona_rapport.docx" download>Rapport<span>Word · 21 sidor</span></a><a href="nedladdning/landskrona_val2026_parti_per_distrikt.csv" download>Distrikt 2026<span>CSV · semikolonseparerad</span></a></div></div>`;
-    return html + `<p class="foot">Källa: <a href="https://www.val.se/valresultat-och-statistik/statistik-och-data/radata-val-2026" target="_blank" rel="noopener">Valmyndigheten</a>, slutligt valresultat per valdistrikt, och <a href="https://www.scb.se/me0104" target="_blank" rel="noopener">SCB</a>. Region = Landskronas röster i regionvalet (Region Skåne).</p></div>`;
+    html += `<div class="card"><h2>Ladda ner</h2><p class="note">Rådata och rapport med hela tidsserien 2006–2026.</p><div class="dl"><a href="#" role="button" data-file="Landskrona_val2026_radata.xlsx" data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">Rådata<span>Excel · alla val och distrikt</span></a><a href="#" role="button" data-file="Valet_2026_i_Landskrona_rapport.docx" data-type="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Rapport<span>Word · 21 sidor</span></a><a href="#" role="button" data-file="landskrona_val2026_parti_per_distrikt.csv" data-type="text/csv">Distrikt 2026<span>CSV · semikolonseparerad</span></a></div></div>`;
+    return html + `<p class="foot">Källa: <a href="https://www.val.se/valresultat-och-statistik/statistik-och-data/radata-val-2026" target="_blank" rel="noopener">Valmyndigheten</a>, slutligt valresultat per valdistrikt, och <a href="https://www.scb.se/me0104" target="_blank" rel="noopener">SCB</a>. Region = Landskronas röster i regionvalet (Region Skåne).</p><p class="foot"><button class="lock-out" id="logout">Lås appen på den här enheten</button></p></div>`;
   }
 
   function polys(path) { return path.split('M').slice(1).map((seg) => seg.replace('Z', '').split('L').map((xy) => xy.split(',').map(Number))); }
@@ -349,11 +431,13 @@ select { font: inherit; font-size: .85rem; color: var(--ink); background: var(--
     main.querySelectorAll('.map path').forEach((p) => p.addEventListener('click', () => set({sel: st.sel === p.dataset.k ? null : p.dataset.k})));
     main.querySelectorAll('.row').forEach((r) => r.addEventListener('click', () => set({sel: st.sel === r.dataset.k ? null : r.dataset.k})));
     const bak = document.getElementById('bak'); if (bak) bak.addEventListener('change', () => set({bak: bak.value}));
+    main.querySelectorAll('.dl a[data-file]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); window.lkDownload(a); }));
+    const lo = document.getElementById('logout'); if (lo) lo.addEventListener('click', () => window.lkLogout());
     main.scrollTop = scroll;
   }
   let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 150); });
   render();
-})();
+};
 </script>
 <script>
 if ('serviceWorker' in navigator && location.protocol === 'https:') {

@@ -11,6 +11,12 @@ En fristående webbapp med valresultaten i Landskrona: kommun-, region- och riks
 
 Appen öppnas då i helskärm som en vanlig app och fungerar även utan nät efter första besöket.
 
+## Lösenord
+
+Appen är lösenordsskyddad. Datan och nedladdningsfilerna ligger krypterade i repot (AES-GCM, nyckel härledd ur lösenordet med PBKDF2-SHA256) och dekrypteras först i webbläsaren när rätt lösenord anges. Väljer man "Kom ihåg på den här enheten" sparas nyckeln lokalt i webbläsaren; knappen "Lås appen på den här enheten" längst ner i Översikt tar bort den.
+
+Lösenordet står inte i repot. Byt lösenord genom att kryptera om `data.enc.json` och filerna i `nedladdning/` med ett nytt lösenord.
+
 ## Innehåll
 
 - **Översikt** – partiernas andel 2026 jämfört med 2022, mandat i kommunfullmäktige och röstdelning mellan valen.
@@ -24,11 +30,9 @@ Appen öppnas då i helskärm som en vanlig app och fungerar även utan nät eft
 | Fil | Innehåll |
 |---|---|
 | `index.html` | Appen |
-| `data.js` | All data som appen använder |
+| `data.enc.json` | All data som appen använder, krypterad |
 | `manifest.webmanifest`, `sw.js`, `icons/` | Hemskärmsikon och offline-stöd |
-| `nedladdning/Landskrona_val2026_radata.xlsx` | Rådata: alla val och distrikt 2006–2026, SCB-bakgrund |
-| `nedladdning/Valet_2026_i_Landskrona_rapport.docx` | Rapport med hela tidsserien |
-| `nedladdning/landskrona_val2026_parti_per_distrikt.csv` | Resultat 2026 per distrikt och parti |
+| `nedladdning/*.enc` | Krypterade nedladdningar: rådata (Excel), rapport (Word) och resultat per distrikt (CSV). Hämtas via appen. |
 
 ## Källor och metod
 

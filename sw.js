@@ -1,6 +1,6 @@
 // Offline-stöd: appens filer sparas i cachen vid första besöket.
-const CACHE = 'valet-lk-v1';
-const SHELL = ['./', 'index.html', 'data.js', 'manifest.webmanifest', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon-32.png'];
+const CACHE = 'valet-lk-v2';
+const SHELL = ['./', 'index.html', 'data.enc.json', 'manifest.webmanifest', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon-32.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
