@@ -1,0 +1,757 @@
+﻿val;distriktskod;distrikt;parti;roster_2026;andel_2026;roster_2022;andel_2022;forandring_pe
+Riksdag;12820101;Citadellstaden;S;317;27.9;320;27.42;0.48
+Riksdag;12820101;Citadellstaden;M;185;16.29;193;16.54;-0.25
+Riksdag;12820101;Citadellstaden;SD;317;27.9;358;30.68;-2.77
+Riksdag;12820101;Citadellstaden;V;71;6.25;40;3.43;2.82
+Riksdag;12820101;Citadellstaden;L;120;10.56;107;9.17;1.39
+Riksdag;12820101;Citadellstaden;C;41;3.61;48;4.11;-0.5
+Riksdag;12820101;Citadellstaden;KD;42;3.7;55;4.71;-1.02
+Riksdag;12820101;Citadellstaden;MP;30;2.64;26;2.23;0.41
+Riksdag;12820101;Citadellstaden;Övr;13;1.14;20;1.71;-0.57
+Riksdag;12820102;Fröjdenborg;S;332;29.94;343;31.97;-2.03
+Riksdag;12820102;Fröjdenborg;M;131;11.81;150;13.98;-2.17
+Riksdag;12820102;Fröjdenborg;SD;282;25.43;284;26.47;-1.04
+Riksdag;12820102;Fröjdenborg;V;131;11.81;84;7.83;3.98
+Riksdag;12820102;Fröjdenborg;L;101;9.11;73;6.8;2.3
+Riksdag;12820102;Fröjdenborg;C;37;3.34;36;3.36;-0.02
+Riksdag;12820102;Fröjdenborg;KD;34;3.07;39;3.63;-0.57
+Riksdag;12820102;Fröjdenborg;MP;50;4.51;34;3.17;1.34
+Riksdag;12820102;Fröjdenborg;Övr;11;0.99;30;2.8;-1.8
+Riksdag;12820103;Norra Förstaden;S;415;37.83;350;34.25;3.58
+Riksdag;12820103;Norra Förstaden;M;110;10.03;120;11.74;-1.71
+Riksdag;12820103;Norra Förstaden;SD;227;20.69;270;26.42;-5.73
+Riksdag;12820103;Norra Förstaden;V;171;15.59;99;9.69;5.9
+Riksdag;12820103;Norra Förstaden;L;61;5.56;48;4.7;0.86
+Riksdag;12820103;Norra Förstaden;C;22;2.01;30;2.94;-0.93
+Riksdag;12820103;Norra Förstaden;KD;21;1.91;28;2.74;-0.83
+Riksdag;12820103;Norra Förstaden;MP;52;4.74;37;3.62;1.12
+Riksdag;12820103;Norra Förstaden;Övr;18;1.64;40;3.91;-2.27
+Riksdag;12820104;Centrum;S;370;32.51;275;31.43;1.08
+Riksdag;12820104;Centrum;M;159;13.97;117;13.37;0.6
+Riksdag;12820104;Centrum;SD;269;23.64;257;29.37;-5.73
+Riksdag;12820104;Centrum;V;117;10.28;68;7.77;2.51
+Riksdag;12820104;Centrum;L;83;7.29;36;4.11;3.18
+Riksdag;12820104;Centrum;C;31;2.72;28;3.2;-0.48
+Riksdag;12820104;Centrum;KD;41;3.6;22;2.51;1.09
+Riksdag;12820104;Centrum;MP;46;4.04;33;3.77;0.27
+Riksdag;12820104;Centrum;Övr;22;1.93;39;4.46;-2.52
+Riksdag;12820105;Dammhagen;S;398;43.45;304;38.87;4.58
+Riksdag;12820105;Dammhagen;M;68;7.42;74;9.46;-2.04
+Riksdag;12820105;Dammhagen;SD;150;16.38;197;25.19;-8.82
+Riksdag;12820105;Dammhagen;V;203;22.16;73;9.34;12.83
+Riksdag;12820105;Dammhagen;L;30;3.28;32;4.09;-0.82
+Riksdag;12820105;Dammhagen;C;14;1.53;9;1.15;0.38
+Riksdag;12820105;Dammhagen;KD;14;1.53;10;1.28;0.25
+Riksdag;12820105;Dammhagen;MP;26;2.84;21;2.69;0.15
+Riksdag;12820105;Dammhagen;Övr;13;1.42;62;7.93;-6.51
+Riksdag;12820106;Gustav Adolf;S;408;40.44;374;39.74;0.69
+Riksdag;12820106;Gustav Adolf;M;103;10.21;136;14.45;-4.24
+Riksdag;12820106;Gustav Adolf;SD;185;18.33;217;23.06;-4.73
+Riksdag;12820106;Gustav Adolf;V;180;17.84;70;7.44;10.4
+Riksdag;12820106;Gustav Adolf;L;41;4.06;29;3.08;0.98
+Riksdag;12820106;Gustav Adolf;C;14;1.39;16;1.7;-0.31
+Riksdag;12820106;Gustav Adolf;KD;27;2.68;18;1.91;0.76
+Riksdag;12820106;Gustav Adolf;MP;32;3.17;26;2.76;0.41
+Riksdag;12820106;Gustav Adolf;Övr;19;1.88;55;5.84;-3.96
+Riksdag;12820107;S:t Olov;S;262;31.04;285;34.59;-3.54
+Riksdag;12820107;S:t Olov;M;119;14.1;114;13.83;0.26
+Riksdag;12820107;S:t Olov;SD;171;20.26;212;25.73;-5.47
+Riksdag;12820107;S:t Olov;V;67;7.94;39;4.73;3.21
+Riksdag;12820107;S:t Olov;L;88;10.43;71;8.62;1.81
+Riksdag;12820107;S:t Olov;C;48;5.69;39;4.73;0.95
+Riksdag;12820107;S:t Olov;KD;27;3.2;18;2.18;1.01
+Riksdag;12820107;S:t Olov;MP;49;5.81;33;4.0;1.8
+Riksdag;12820107;S:t Olov;Övr;13;1.54;13;1.58;-0.04
+Riksdag;12820108;Albano;S;410;37.55;384;37.98;-0.44
+Riksdag;12820108;Albano;M;103;9.43;99;9.79;-0.36
+Riksdag;12820108;Albano;SD;265;24.27;294;29.08;-4.81
+Riksdag;12820108;Albano;V;120;10.99;68;6.73;4.26
+Riksdag;12820108;Albano;L;65;5.95;41;4.06;1.9
+Riksdag;12820108;Albano;C;30;2.75;25;2.47;0.27
+Riksdag;12820108;Albano;KD;39;3.57;28;2.77;0.8
+Riksdag;12820108;Albano;MP;41;3.75;32;3.17;0.59
+Riksdag;12820108;Albano;Övr;19;1.74;40;3.96;-2.22
+Riksdag;12820109;Larvi;S;346;31.63;370;34.13;-2.51
+Riksdag;12820109;Larvi;M;149;13.62;134;12.36;1.26
+Riksdag;12820109;Larvi;SD;314;28.7;332;30.63;-1.93
+Riksdag;12820109;Larvi;V;82;7.5;54;4.98;2.51
+Riksdag;12820109;Larvi;L;71;6.49;57;5.26;1.23
+Riksdag;12820109;Larvi;C;28;2.56;40;3.69;-1.13
+Riksdag;12820109;Larvi;KD;48;4.39;39;3.6;0.79
+Riksdag;12820109;Larvi;MP;46;4.2;38;3.51;0.7
+Riksdag;12820109;Larvi;Övr;10;0.91;20;1.85;-0.93
+Riksdag;12820110;Sandvången;S;267;34.81;307;39.46;-4.65
+Riksdag;12820110;Sandvången;M;82;10.69;75;9.64;1.05
+Riksdag;12820110;Sandvången;SD;265;34.55;284;36.5;-1.95
+Riksdag;12820110;Sandvången;V;69;9.0;36;4.63;4.37
+Riksdag;12820110;Sandvången;L;29;3.78;23;2.96;0.82
+Riksdag;12820110;Sandvången;C;5;0.65;7;0.9;-0.25
+Riksdag;12820110;Sandvången;KD;25;3.26;14;1.8;1.46
+Riksdag;12820110;Sandvången;MP;16;2.09;13;1.67;0.42
+Riksdag;12820110;Sandvången;Övr;9;1.17;19;2.44;-1.27
+Riksdag;12820111;Helgebröten;S;402;45.22;393;44.16;1.06
+Riksdag;12820111;Helgebröten;M;123;13.84;101;11.35;2.49
+Riksdag;12820111;Helgebröten;SD;149;16.76;199;22.36;-5.6
+Riksdag;12820111;Helgebröten;V;68;7.65;50;5.62;2.03
+Riksdag;12820111;Helgebröten;L;67;7.54;53;5.96;1.58
+Riksdag;12820111;Helgebröten;C;17;1.91;25;2.81;-0.9
+Riksdag;12820111;Helgebröten;KD;33;3.71;22;2.47;1.24
+Riksdag;12820111;Helgebröten;MP;25;2.81;25;2.81;0.0
+Riksdag;12820111;Helgebröten;Övr;5;0.56;22;2.47;-1.91
+Riksdag;12820112;Norrestad;S;455;46.57;309;42.27;4.3
+Riksdag;12820112;Norrestad;M;34;3.48;36;4.92;-1.44
+Riksdag;12820112;Norrestad;SD;134;13.72;120;16.42;-2.7
+Riksdag;12820112;Norrestad;V;286;29.27;72;9.85;19.42
+Riksdag;12820112;Norrestad;L;13;1.33;3;0.41;0.92
+Riksdag;12820112;Norrestad;C;12;1.23;20;2.74;-1.51
+Riksdag;12820112;Norrestad;KD;10;1.02;15;2.05;-1.03
+Riksdag;12820112;Norrestad;MP;21;2.15;19;2.6;-0.45
+Riksdag;12820112;Norrestad;Övr;12;1.23;137;18.74;-17.51
+Riksdag;12820113;Karlslund;S;428;40.76;336;37.09;3.68
+Riksdag;12820113;Karlslund;M;106;10.1;83;9.16;0.93
+Riksdag;12820113;Karlslund;SD;189;18.0;218;24.06;-6.06
+Riksdag;12820113;Karlslund;V;179;17.05;80;8.83;8.22
+Riksdag;12820113;Karlslund;L;55;5.24;30;3.31;1.93
+Riksdag;12820113;Karlslund;C;28;2.67;25;2.76;-0.09
+Riksdag;12820113;Karlslund;KD;22;2.1;29;3.2;-1.11
+Riksdag;12820113;Karlslund;MP;35;3.33;40;4.42;-1.08
+Riksdag;12820113;Karlslund;Övr;8;0.76;65;7.17;-6.41
+Riksdag;12820114;Västra Fäladen;S;493;40.21;505;43.38;-3.17
+Riksdag;12820114;Västra Fäladen;M;169;13.78;125;10.74;3.05
+Riksdag;12820114;Västra Fäladen;SD;289;23.57;331;28.44;-4.86
+Riksdag;12820114;Västra Fäladen;V;53;4.32;45;3.87;0.46
+Riksdag;12820114;Västra Fäladen;L;103;8.4;64;5.5;2.9
+Riksdag;12820114;Västra Fäladen;C;21;1.71;24;2.06;-0.35
+Riksdag;12820114;Västra Fäladen;KD;44;3.59;30;2.58;1.01
+Riksdag;12820114;Västra Fäladen;MP;41;3.34;19;1.63;1.71
+Riksdag;12820114;Västra Fäladen;Övr;13;1.06;21;1.8;-0.74
+Riksdag;12820115;Drottningen;S;420;30.84;514;36.51;-5.67
+Riksdag;12820115;Drottningen;M;305;22.39;265;18.82;3.57
+Riksdag;12820115;Drottningen;SD;298;21.88;365;25.92;-4.04
+Riksdag;12820115;Drottningen;V;26;1.91;29;2.06;-0.15
+Riksdag;12820115;Drottningen;L;165;12.11;124;8.81;3.31
+Riksdag;12820115;Drottningen;C;49;3.6;48;3.41;0.19
+Riksdag;12820115;Drottningen;KD;41;3.01;37;2.63;0.38
+Riksdag;12820115;Drottningen;MP;45;3.3;21;1.49;1.81
+Riksdag;12820115;Drottningen;Övr;13;0.95;5;0.36;0.6
+Riksdag;12820116;Svaneholm;S;282;18.83;378;24.87;-6.04
+Riksdag;12820116;Svaneholm;M;417;27.84;453;29.8;-1.97
+Riksdag;12820116;Svaneholm;SD;276;18.42;299;19.67;-1.25
+Riksdag;12820116;Svaneholm;V;15;1.0;22;1.45;-0.45
+Riksdag;12820116;Svaneholm;L;275;18.36;183;12.04;6.32
+Riksdag;12820116;Svaneholm;C;97;6.48;61;4.01;2.46
+Riksdag;12820116;Svaneholm;KD;78;5.21;59;3.88;1.33
+Riksdag;12820116;Svaneholm;MP;51;3.4;56;3.68;-0.28
+Riksdag;12820116;Svaneholm;Övr;7;0.47;9;0.59;-0.12
+Riksdag;12820117;Norra Borstahusen;S;216;22.88;149;21.98;0.9
+Riksdag;12820117;Norra Borstahusen;M;288;30.51;233;34.37;-3.86
+Riksdag;12820117;Norra Borstahusen;SD;129;13.67;131;19.32;-5.66
+Riksdag;12820117;Norra Borstahusen;V;20;2.12;10;1.47;0.64
+Riksdag;12820117;Norra Borstahusen;L;147;15.57;81;11.95;3.63
+Riksdag;12820117;Norra Borstahusen;C;57;6.04;27;3.98;2.06
+Riksdag;12820117;Norra Borstahusen;KD;56;5.93;31;4.57;1.36
+Riksdag;12820117;Norra Borstahusen;MP;28;2.97;13;1.92;1.05
+Riksdag;12820117;Norra Borstahusen;Övr;3;0.32;3;0.44;-0.12
+Riksdag;12820118;Weibullsholm;S;338;37.14;298;35.86;1.28
+Riksdag;12820118;Weibullsholm;M;67;7.36;87;10.47;-3.11
+Riksdag;12820118;Weibullsholm;SD;178;19.56;213;25.63;-6.07
+Riksdag;12820118;Weibullsholm;V;210;23.08;81;9.75;13.33
+Riksdag;12820118;Weibullsholm;L;34;3.74;20;2.41;1.33
+Riksdag;12820118;Weibullsholm;C;12;1.32;24;2.89;-1.57
+Riksdag;12820118;Weibullsholm;KD;13;1.43;22;2.65;-1.22
+Riksdag;12820118;Weibullsholm;MP;39;4.29;30;3.61;0.68
+Riksdag;12820118;Weibullsholm;Övr;19;2.09;56;6.74;-4.65
+Riksdag;12820201;Ven;S;49;17.63;62;20.6;-2.97
+Riksdag;12820201;Ven;M;60;21.58;66;21.93;-0.34
+Riksdag;12820201;Ven;SD;49;17.63;72;23.92;-6.29
+Riksdag;12820201;Ven;V;13;4.68;20;6.64;-1.97
+Riksdag;12820201;Ven;L;35;12.59;22;7.31;5.28
+Riksdag;12820201;Ven;C;24;8.63;22;7.31;1.32
+Riksdag;12820201;Ven;KD;13;4.68;13;4.32;0.36
+Riksdag;12820201;Ven;MP;30;10.79;22;7.31;3.48
+Riksdag;12820201;Ven;Övr;5;1.8;2;0.66;1.13
+Riksdag;12820301;Annelöv;S;172;15.85;211;19.87;-4.02
+Riksdag;12820301;Annelöv;M;219;20.18;192;18.08;2.11
+Riksdag;12820301;Annelöv;SD;335;30.88;402;37.85;-6.98
+Riksdag;12820301;Annelöv;V;42;3.87;27;2.54;1.33
+Riksdag;12820301;Annelöv;L;106;9.77;70;6.59;3.18
+Riksdag;12820301;Annelöv;C;67;6.18;49;4.61;1.56
+Riksdag;12820301;Annelöv;KD;63;5.81;55;5.18;0.63
+Riksdag;12820301;Annelöv;MP;63;5.81;47;4.43;1.38
+Riksdag;12820301;Annelöv;Övr;18;1.66;9;0.85;0.81
+Riksdag;12820401;Häljarp Norra;S;305;21.45;301;21.35;0.1
+Riksdag;12820401;Häljarp Norra;M;361;25.39;355;25.18;0.21
+Riksdag;12820401;Häljarp Norra;SD;401;28.2;495;35.11;-6.91
+Riksdag;12820401;Häljarp Norra;V;41;2.88;26;1.84;1.04
+Riksdag;12820401;Häljarp Norra;L;114;8.02;75;5.32;2.7
+Riksdag;12820401;Häljarp Norra;C;62;4.36;57;4.04;0.32
+Riksdag;12820401;Häljarp Norra;KD;78;5.49;61;4.33;1.16
+Riksdag;12820401;Häljarp Norra;MP;41;2.88;33;2.34;0.54
+Riksdag;12820401;Häljarp Norra;Övr;19;1.34;7;0.5;0.84
+Riksdag;12820402;Häljarp Södra;S;338;24.16;345;25.54;-1.38
+Riksdag;12820402;Häljarp Södra;M;334;23.87;317;23.46;0.41
+Riksdag;12820402;Häljarp Södra;SD;394;28.16;418;30.94;-2.78
+Riksdag;12820402;Häljarp Södra;V;38;2.72;23;1.7;1.01
+Riksdag;12820402;Häljarp Södra;L;113;8.08;87;6.44;1.64
+Riksdag;12820402;Häljarp Södra;C;56;4.0;57;4.22;-0.22
+Riksdag;12820402;Häljarp Södra;KD;84;6.0;72;5.33;0.67
+Riksdag;12820402;Häljarp Södra;MP;27;1.93;22;1.63;0.3
+Riksdag;12820402;Häljarp Södra;Övr;15;1.07;10;0.74;0.33
+Riksdag;12820501;Asmundtorp;S;292;21.01;309;21.85;-0.85
+Riksdag;12820501;Asmundtorp;M;307;22.09;331;23.41;-1.32
+Riksdag;12820501;Asmundtorp;SD;441;31.73;504;35.64;-3.92
+Riksdag;12820501;Asmundtorp;V;57;4.1;38;2.69;1.41
+Riksdag;12820501;Asmundtorp;L;116;8.35;60;4.24;4.1
+Riksdag;12820501;Asmundtorp;C;58;4.17;58;4.1;0.07
+Riksdag;12820501;Asmundtorp;KD;69;4.96;59;4.17;0.79
+Riksdag;12820501;Asmundtorp;MP;35;2.52;33;2.33;0.18
+Riksdag;12820501;Asmundtorp;Övr;15;1.08;22;1.56;-0.48
+Riksdag;12820801;Härslöv;S;190;23.84;217;27.43;-3.59
+Riksdag;12820801;Härslöv;M;137;17.19;134;16.94;0.25
+Riksdag;12820801;Härslöv;SD;226;28.36;279;35.27;-6.92
+Riksdag;12820801;Härslöv;V;68;8.53;22;2.78;5.75
+Riksdag;12820801;Härslöv;L;65;8.16;43;5.44;2.72
+Riksdag;12820801;Härslöv;C;39;4.89;31;3.92;0.97
+Riksdag;12820801;Härslöv;KD;40;5.02;29;3.67;1.35
+Riksdag;12820801;Härslöv;MP;21;2.63;26;3.29;-0.65
+Riksdag;12820801;Härslöv;Övr;11;1.38;10;1.26;0.12
+Riksdag;12820802;Glumslöv Norra;S;223;20.96;252;24.25;-3.3
+Riksdag;12820802;Glumslöv Norra;M;301;28.29;270;25.99;2.3
+Riksdag;12820802;Glumslöv Norra;SD;187;17.58;205;19.73;-2.16
+Riksdag;12820802;Glumslöv Norra;V;14;1.32;20;1.92;-0.61
+Riksdag;12820802;Glumslöv Norra;L;128;12.03;73;7.03;5.0
+Riksdag;12820802;Glumslöv Norra;C;83;7.8;86;8.28;-0.48
+Riksdag;12820802;Glumslöv Norra;KD;52;4.89;75;7.22;-2.33
+Riksdag;12820802;Glumslöv Norra;MP;63;5.92;49;4.72;1.2
+Riksdag;12820802;Glumslöv Norra;Övr;13;1.22;9;0.87;0.36
+Riksdag;12820803;Glumslöv Södra;S;168;19.29;204;23.64;-4.35
+Riksdag;12820803;Glumslöv Södra;M;232;26.64;217;25.14;1.49
+Riksdag;12820803;Glumslöv Södra;SD;161;18.48;190;22.02;-3.53
+Riksdag;12820803;Glumslöv Södra;V;17;1.95;23;2.67;-0.71
+Riksdag;12820803;Glumslöv Södra;L;102;11.71;74;8.57;3.14
+Riksdag;12820803;Glumslöv Södra;C;82;9.41;70;8.11;1.3
+Riksdag;12820803;Glumslöv Södra;KD;57;6.54;46;5.33;1.21
+Riksdag;12820803;Glumslöv Södra;MP;45;5.17;35;4.06;1.11
+Riksdag;12820803;Glumslöv Södra;Övr;7;0.8;4;0.46;0.34
+Riksdag;128200;Uppsamlingsdistrikt 00;S;263;28.13;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;M;176;18.82;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;SD;185;19.79;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;V;96;10.27;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;L;67;7.17;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;C;64;6.84;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;KD;28;2.99;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;MP;43;4.6;;;
+Riksdag;128200;Uppsamlingsdistrikt 00;Övr;13;1.39;;;
+Region;12820101;Citadellstaden;S;335;29.36;339;29.17;0.19
+Region;12820101;Citadellstaden;M;203;17.79;208;17.9;-0.11
+Region;12820101;Citadellstaden;SD;238;20.86;278;23.92;-3.07
+Region;12820101;Citadellstaden;V;75;6.57;43;3.7;2.87
+Region;12820101;Citadellstaden;L;153;13.41;149;12.82;0.59
+Region;12820101;Citadellstaden;C;27;2.37;32;2.75;-0.39
+Region;12820101;Citadellstaden;KD;67;5.87;67;5.77;0.11
+Region;12820101;Citadellstaden;MP;31;2.72;29;2.5;0.22
+Region;12820101;Citadellstaden;Övr;12;1.05;17;1.46;-0.41
+Region;12820102;Fröjdenborg;S;369;33.01;372;34.93;-1.92
+Region;12820102;Fröjdenborg;M;155;13.86;159;14.93;-1.07
+Region;12820102;Fröjdenborg;SD;216;19.32;199;18.69;0.63
+Region;12820102;Fröjdenborg;V;128;11.45;94;8.83;2.62
+Region;12820102;Fröjdenborg;L;129;11.54;113;10.61;0.93
+Region;12820102;Fröjdenborg;C;20;1.79;11;1.03;0.76
+Region;12820102;Fröjdenborg;KD;53;4.74;55;5.16;-0.42
+Region;12820102;Fröjdenborg;MP;42;3.76;32;3.0;0.75
+Region;12820102;Fröjdenborg;Övr;6;0.54;30;2.82;-2.28
+Region;12820103;Norra Förstaden;S;472;41.29;394;37.81;3.48
+Region;12820103;Norra Förstaden;M;115;10.06;110;10.56;-0.5
+Region;12820103;Norra Förstaden;SD;183;16.01;218;20.92;-4.91
+Region;12820103;Norra Förstaden;V;171;14.96;103;9.88;5.08
+Region;12820103;Norra Förstaden;L;91;7.96;79;7.58;0.38
+Region;12820103;Norra Förstaden;C;19;1.66;36;3.45;-1.79
+Region;12820103;Norra Förstaden;KD;36;3.15;26;2.5;0.65
+Region;12820103;Norra Förstaden;MP;42;3.67;28;2.69;0.99
+Region;12820103;Norra Förstaden;Övr;14;1.22;48;4.61;-3.38
+Region;12820104;Centrum;S;388;33.86;298;33.45;0.41
+Region;12820104;Centrum;M;145;12.65;118;13.24;-0.59
+Region;12820104;Centrum;SD;238;20.77;206;23.12;-2.35
+Region;12820104;Centrum;V;120;10.47;83;9.32;1.16
+Region;12820104;Centrum;L;130;11.34;61;6.85;4.5
+Region;12820104;Centrum;C;24;2.09;19;2.13;-0.04
+Region;12820104;Centrum;KD;41;3.58;35;3.93;-0.35
+Region;12820104;Centrum;MP;52;4.54;30;3.37;1.17
+Region;12820104;Centrum;Övr;8;0.7;41;4.6;-3.9
+Region;12820105;Dammhagen;S;459;45.9;325;39.25;6.65
+Region;12820105;Dammhagen;M;85;8.5;66;7.97;0.53
+Region;12820105;Dammhagen;SD;123;12.3;178;21.5;-9.2
+Region;12820105;Dammhagen;V;226;22.6;95;11.47;11.13
+Region;12820105;Dammhagen;L;51;5.1;50;6.04;-0.94
+Region;12820105;Dammhagen;C;14;1.4;12;1.45;-0.05
+Region;12820105;Dammhagen;KD;12;1.2;18;2.17;-0.97
+Region;12820105;Dammhagen;MP;25;2.5;15;1.81;0.69
+Region;12820105;Dammhagen;Övr;5;0.5;69;8.33;-7.83
+Region;12820106;Gustav Adolf;S;463;43.56;402;40.98;2.58
+Region;12820106;Gustav Adolf;M;99;9.31;145;14.78;-5.47
+Region;12820106;Gustav Adolf;SD;158;14.86;177;18.04;-3.18
+Region;12820106;Gustav Adolf;V;190;17.87;72;7.34;10.53
+Region;12820106;Gustav Adolf;L;71;6.68;59;6.01;0.66
+Region;12820106;Gustav Adolf;C;12;1.13;13;1.33;-0.2
+Region;12820106;Gustav Adolf;KD;33;3.1;21;2.14;0.96
+Region;12820106;Gustav Adolf;MP;26;2.45;25;2.55;-0.1
+Region;12820106;Gustav Adolf;Övr;11;1.03;67;6.83;-5.79
+Region;12820107;S:t Olov;S;300;35.21;302;36.08;-0.87
+Region;12820107;S:t Olov;M;128;15.02;100;11.95;3.08
+Region;12820107;S:t Olov;SD;126;14.79;158;18.88;-4.09
+Region;12820107;S:t Olov;V;69;8.1;46;5.5;2.6
+Region;12820107;S:t Olov;L;127;14.91;127;15.17;-0.27
+Region;12820107;S:t Olov;C;22;2.58;24;2.87;-0.29
+Region;12820107;S:t Olov;KD;31;3.64;41;4.9;-1.26
+Region;12820107;S:t Olov;MP;42;4.93;27;3.23;1.7
+Region;12820107;S:t Olov;Övr;7;0.82;12;1.43;-0.61
+Region;12820108;Albano;S;444;40.33;390;38.2;2.13
+Region;12820108;Albano;M;106;9.63;102;9.99;-0.36
+Region;12820108;Albano;SD;224;20.35;238;23.31;-2.97
+Region;12820108;Albano;V;121;10.99;74;7.25;3.74
+Region;12820108;Albano;L;80;7.27;87;8.52;-1.25
+Region;12820108;Albano;C;23;2.09;20;1.96;0.13
+Region;12820108;Albano;KD;51;4.63;39;3.82;0.81
+Region;12820108;Albano;MP;41;3.72;30;2.94;0.79
+Region;12820108;Albano;Övr;11;1.0;41;4.02;-3.02
+Region;12820109;Larvi;S;384;35.07;394;36.25;-1.18
+Region;12820109;Larvi;M;155;14.16;146;13.43;0.72
+Region;12820109;Larvi;SD;253;23.11;251;23.09;0.01
+Region;12820109;Larvi;V;86;7.85;63;5.8;2.06
+Region;12820109;Larvi;L;104;9.5;101;9.29;0.21
+Region;12820109;Larvi;C;15;1.37;29;2.67;-1.3
+Region;12820109;Larvi;KD;58;5.3;45;4.14;1.16
+Region;12820109;Larvi;MP;38;3.47;33;3.04;0.43
+Region;12820109;Larvi;Övr;2;0.18;25;2.3;-2.12
+Region;12820110;Sandvången;S;283;36.75;324;41.54;-4.79
+Region;12820110;Sandvången;M;94;12.21;59;7.56;4.64
+Region;12820110;Sandvången;SD;226;29.35;242;31.03;-1.67
+Region;12820110;Sandvången;V;63;8.18;33;4.23;3.95
+Region;12820110;Sandvången;L;53;6.88;53;6.79;0.09
+Region;12820110;Sandvången;C;3;0.39;4;0.51;-0.12
+Region;12820110;Sandvången;KD;27;3.51;33;4.23;-0.72
+Region;12820110;Sandvången;MP;14;1.82;14;1.79;0.02
+Region;12820110;Sandvången;Övr;7;0.91;18;2.31;-1.4
+Region;12820111;Helgebröten;S;402;44.87;404;45.09;-0.22
+Region;12820111;Helgebröten;M;118;13.17;92;10.27;2.9
+Region;12820111;Helgebröten;SD;113;12.61;144;16.07;-3.46
+Region;12820111;Helgebröten;V;75;8.37;57;6.36;2.01
+Region;12820111;Helgebröten;L;98;10.94;112;12.5;-1.56
+Region;12820111;Helgebröten;C;13;1.45;17;1.9;-0.45
+Region;12820111;Helgebröten;KD;52;5.8;32;3.57;2.23
+Region;12820111;Helgebröten;MP;23;2.57;17;1.9;0.67
+Region;12820111;Helgebröten;Övr;2;0.22;21;2.34;-2.12
+Region;12820112;Norrestad;S;474;45.62;324;40.5;5.12
+Region;12820112;Norrestad;M;49;4.72;41;5.12;-0.41
+Region;12820112;Norrestad;SD;119;11.45;117;14.62;-3.17
+Region;12820112;Norrestad;V;310;29.84;91;11.38;18.46
+Region;12820112;Norrestad;L;36;3.46;21;2.62;0.84
+Region;12820112;Norrestad;C;8;0.77;18;2.25;-1.48
+Region;12820112;Norrestad;KD;9;0.87;12;1.5;-0.63
+Region;12820112;Norrestad;MP;27;2.6;19;2.38;0.22
+Region;12820112;Norrestad;Övr;7;0.67;157;19.62;-18.95
+Region;12820113;Karlslund;S;460;42.55;359;38.77;3.78
+Region;12820113;Karlslund;M;112;10.36;86;9.29;1.07
+Region;12820113;Karlslund;SD;148;13.69;176;19.01;-5.32
+Region;12820113;Karlslund;V;193;17.85;92;9.94;7.92
+Region;12820113;Karlslund;L;79;7.31;55;5.94;1.37
+Region;12820113;Karlslund;C;18;1.67;25;2.7;-1.03
+Region;12820113;Karlslund;KD;29;2.68;38;4.1;-1.42
+Region;12820113;Karlslund;MP;37;3.42;25;2.7;0.72
+Region;12820113;Karlslund;Övr;5;0.46;70;7.56;-7.1
+Region;12820114;Västra Fäladen;S;531;43.63;517;44.65;-1.01
+Region;12820114;Västra Fäladen;M;171;14.05;142;12.26;1.79
+Region;12820114;Västra Fäladen;SD;214;17.58;228;19.69;-2.1
+Region;12820114;Västra Fäladen;V;57;4.68;42;3.63;1.06
+Region;12820114;Västra Fäladen;L;139;11.42;112;9.67;1.75
+Region;12820114;Västra Fäladen;C;16;1.31;30;2.59;-1.28
+Region;12820114;Västra Fäladen;KD;55;4.52;48;4.15;0.37
+Region;12820114;Västra Fäladen;MP;26;2.14;13;1.12;1.01
+Region;12820114;Västra Fäladen;Övr;8;0.66;26;2.25;-1.59
+Region;12820115;Drottningen;S;466;34.42;542;38.71;-4.3
+Region;12820115;Drottningen;M;279;20.61;224;16.0;4.61
+Region;12820115;Drottningen;SD;203;14.99;258;18.43;-3.44
+Region;12820115;Drottningen;V;30;2.22;37;2.64;-0.43
+Region;12820115;Drottningen;L;231;17.06;211;15.07;1.99
+Region;12820115;Drottningen;C;25;1.85;27;1.93;-0.08
+Region;12820115;Drottningen;KD;79;5.83;70;5.0;0.83
+Region;12820115;Drottningen;MP;34;2.51;21;1.5;1.01
+Region;12820115;Drottningen;Övr;7;0.52;10;0.71;-0.2
+Region;12820116;Svaneholm;S;328;21.94;374;24.87;-2.93
+Region;12820116;Svaneholm;M;434;29.03;418;27.79;1.24
+Region;12820116;Svaneholm;SD;165;11.04;191;12.7;-1.66
+Region;12820116;Svaneholm;V;18;1.2;29;1.93;-0.72
+Region;12820116;Svaneholm;L;334;22.34;297;19.75;2.59
+Region;12820116;Svaneholm;C;49;3.28;45;2.99;0.29
+Region;12820116;Svaneholm;KD;112;7.49;108;7.18;0.31
+Region;12820116;Svaneholm;MP;49;3.28;32;2.13;1.15
+Region;12820116;Svaneholm;Övr;6;0.4;10;0.66;-0.26
+Region;12820117;Norra Borstahusen;S;243;25.96;154;22.85;3.11
+Region;12820117;Norra Borstahusen;M;311;33.23;207;30.71;2.51
+Region;12820117;Norra Borstahusen;SD;72;7.69;81;12.02;-4.33
+Region;12820117;Norra Borstahusen;V;17;1.82;13;1.93;-0.11
+Region;12820117;Norra Borstahusen;L;188;20.09;139;20.62;-0.54
+Region;12820117;Norra Borstahusen;C;22;2.35;18;2.67;-0.32
+Region;12820117;Norra Borstahusen;KD;57;6.09;43;6.38;-0.29
+Region;12820117;Norra Borstahusen;MP;24;2.56;14;2.08;0.49
+Region;12820117;Norra Borstahusen;Övr;2;0.21;5;0.74;-0.53
+Region;12820118;Weibullsholm;S;398;41.5;328;37.06;4.44
+Region;12820118;Weibullsholm;M;70;7.3;97;10.96;-3.66
+Region;12820118;Weibullsholm;SD;153;15.95;183;20.68;-4.72
+Region;12820118;Weibullsholm;V;207;21.58;95;10.73;10.85
+Region;12820118;Weibullsholm;L;51;5.32;46;5.2;0.12
+Region;12820118;Weibullsholm;C;12;1.25;21;2.37;-1.12
+Region;12820118;Weibullsholm;KD;23;2.4;29;3.28;-0.88
+Region;12820118;Weibullsholm;MP;34;3.55;19;2.15;1.4
+Region;12820118;Weibullsholm;Övr;11;1.15;67;7.57;-6.42
+Region;12820201;Ven;S;55;20.0;61;20.33;-0.33
+Region;12820201;Ven;M;68;24.73;85;28.33;-3.61
+Region;12820201;Ven;SD;35;12.73;52;17.33;-4.61
+Region;12820201;Ven;V;16;5.82;20;6.67;-0.85
+Region;12820201;Ven;L;45;16.36;29;9.67;6.7
+Region;12820201;Ven;C;14;5.09;17;5.67;-0.58
+Region;12820201;Ven;KD;10;3.64;19;6.33;-2.7
+Region;12820201;Ven;MP;30;10.91;13;4.33;6.58
+Region;12820201;Ven;Övr;2;0.73;4;1.33;-0.61
+Region;12820301;Annelöv;S;201;18.58;227;21.37;-2.8
+Region;12820301;Annelöv;M;260;24.03;202;19.02;5.01
+Region;12820301;Annelöv;SD;286;26.43;340;32.02;-5.58
+Region;12820301;Annelöv;V;41;3.79;31;2.92;0.87
+Region;12820301;Annelöv;L;106;9.8;98;9.23;0.57
+Region;12820301;Annelöv;C;48;4.44;44;4.14;0.29
+Region;12820301;Annelöv;KD;74;6.84;61;5.74;1.1
+Region;12820301;Annelöv;MP;57;5.27;47;4.43;0.84
+Region;12820301;Annelöv;Övr;9;0.83;12;1.13;-0.3
+Region;12820401;Häljarp Norra;S;341;24.15;339;24.2;-0.05
+Region;12820401;Häljarp Norra;M;381;26.98;354;25.27;1.72
+Region;12820401;Häljarp Norra;SD;352;24.93;384;27.41;-2.48
+Region;12820401;Häljarp Norra;V;56;3.97;45;3.21;0.75
+Region;12820401;Häljarp Norra;L;136;9.63;137;9.78;-0.15
+Region;12820401;Häljarp Norra;C;26;1.84;28;2.0;-0.16
+Region;12820401;Häljarp Norra;KD;77;5.45;79;5.64;-0.19
+Region;12820401;Häljarp Norra;MP;36;2.55;22;1.57;0.98
+Region;12820401;Häljarp Norra;Övr;7;0.5;13;0.93;-0.43
+Region;12820402;Häljarp Södra;S;385;27.88;367;27.55;0.33
+Region;12820402;Häljarp Södra;M;332;24.04;320;24.02;0.02
+Region;12820402;Häljarp Södra;SD;317;22.95;316;23.72;-0.77
+Region;12820402;Häljarp Södra;V;43;3.11;35;2.63;0.49
+Region;12820402;Häljarp Södra;L;172;12.45;152;11.41;1.04
+Region;12820402;Häljarp Södra;C;39;2.82;40;3.0;-0.18
+Region;12820402;Häljarp Södra;KD;63;4.56;69;5.18;-0.62
+Region;12820402;Häljarp Södra;MP;26;1.88;20;1.5;0.38
+Region;12820402;Häljarp Södra;Övr;4;0.29;13;0.98;-0.69
+Region;12820501;Asmundtorp;S;313;22.65;329;23.38;-0.73
+Region;12820501;Asmundtorp;M;335;24.24;317;22.53;1.71
+Region;12820501;Asmundtorp;SD;364;26.34;402;28.57;-2.23
+Region;12820501;Asmundtorp;V;63;4.56;44;3.13;1.43
+Region;12820501;Asmundtorp;L;132;9.55;137;9.74;-0.19
+Region;12820501;Asmundtorp;C;41;2.97;60;4.26;-1.3
+Region;12820501;Asmundtorp;KD;84;6.08;69;4.9;1.17
+Region;12820501;Asmundtorp;MP;44;3.18;34;2.42;0.77
+Region;12820501;Asmundtorp;Övr;6;0.43;15;1.07;-0.63
+Region;12820801;Härslöv;S;208;26.3;243;30.53;-4.23
+Region;12820801;Härslöv;M;141;17.83;121;15.2;2.62
+Region;12820801;Härslöv;SD;186;23.51;226;28.39;-4.88
+Region;12820801;Härslöv;V;64;8.09;37;4.65;3.44
+Region;12820801;Härslöv;L;89;11.25;61;7.66;3.59
+Region;12820801;Härslöv;C;27;3.41;35;4.4;-0.98
+Region;12820801;Härslöv;KD;41;5.18;46;5.78;-0.6
+Region;12820801;Härslöv;MP;22;2.78;18;2.26;0.52
+Region;12820801;Härslöv;Övr;13;1.64;9;1.13;0.51
+Region;12820802;Glumslöv Norra;S;259;24.09;264;25.17;-1.07
+Region;12820802;Glumslöv Norra;M;316;29.4;283;26.98;2.42
+Region;12820802;Glumslöv Norra;SD;144;13.4;156;14.87;-1.48
+Region;12820802;Glumslöv Norra;V;18;1.67;28;2.67;-0.99
+Region;12820802;Glumslöv Norra;L;131;12.19;142;13.54;-1.35
+Region;12820802;Glumslöv Norra;C;66;6.14;49;4.67;1.47
+Region;12820802;Glumslöv Norra;KD;77;7.16;84;8.01;-0.84
+Region;12820802;Glumslöv Norra;MP;48;4.47;29;2.76;1.7
+Region;12820802;Glumslöv Norra;Övr;16;1.49;14;1.33;0.15
+Region;12820803;Glumslöv Södra;S;198;22.84;244;28.24;-5.4
+Region;12820803;Glumslöv Södra;M;242;27.91;207;23.96;3.95
+Region;12820803;Glumslöv Södra;SD;136;15.69;128;14.81;0.87
+Region;12820803;Glumslöv Södra;V;20;2.31;26;3.01;-0.7
+Region;12820803;Glumslöv Södra;L;115;13.26;112;12.96;0.3
+Region;12820803;Glumslöv Södra;C;58;6.69;44;5.09;1.6
+Region;12820803;Glumslöv Södra;KD;62;7.15;73;8.45;-1.3
+Region;12820803;Glumslöv Södra;MP;33;3.81;23;2.66;1.14
+Region;12820803;Glumslöv Södra;Övr;3;0.35;7;0.81;-0.46
+Region;128200;Uppsamlingsdistrikt 00;S;244;31.04;;;
+Region;128200;Uppsamlingsdistrikt 00;M;145;18.45;;;
+Region;128200;Uppsamlingsdistrikt 00;SD;145;18.45;;;
+Region;128200;Uppsamlingsdistrikt 00;V;86;10.94;;;
+Region;128200;Uppsamlingsdistrikt 00;L;75;9.54;;;
+Region;128200;Uppsamlingsdistrikt 00;C;25;3.18;;;
+Region;128200;Uppsamlingsdistrikt 00;KD;28;3.56;;;
+Region;128200;Uppsamlingsdistrikt 00;MP;31;3.94;;;
+Region;128200;Uppsamlingsdistrikt 00;Övr;7;0.89;;;
+Kommun;12820101;Citadellstaden;S;249;21.45;205;17.48;3.97
+Kommun;12820101;Citadellstaden;M;56;4.82;74;6.31;-1.49
+Kommun;12820101;Citadellstaden;SD;189;16.28;230;19.61;-3.33
+Kommun;12820101;Citadellstaden;V;57;4.91;31;2.64;2.27
+Kommun;12820101;Citadellstaden;L;541;46.6;563;48.0;-1.4
+Kommun;12820101;Citadellstaden;C;13;1.12;12;1.02;0.1
+Kommun;12820101;Citadellstaden;KD;13;1.12;17;1.45;-0.33
+Kommun;12820101;Citadellstaden;MP;29;2.5;33;2.81;-0.32
+Kommun;12820101;Citadellstaden;Vi;12;1.03;0;0.0;1.03
+Kommun;12820101;Citadellstaden;Övr;2;0.17;8;0.68;-0.51
+Kommun;12820102;Fröjdenborg;S;291;25.75;281;26.66;-0.91
+Kommun;12820102;Fröjdenborg;M;47;4.16;62;5.88;-1.72
+Kommun;12820102;Fröjdenborg;SD;171;15.13;186;17.65;-2.51
+Kommun;12820102;Fröjdenborg;V;96;8.5;72;6.83;1.66
+Kommun;12820102;Fröjdenborg;L;433;38.32;379;35.96;2.36
+Kommun;12820102;Fröjdenborg;C;6;0.53;7;0.66;-0.13
+Kommun;12820102;Fröjdenborg;KD;8;0.71;24;2.28;-1.57
+Kommun;12820102;Fröjdenborg;MP;51;4.51;42;3.98;0.53
+Kommun;12820102;Fröjdenborg;Vi;25;2.21;0;0.0;2.21
+Kommun;12820102;Fröjdenborg;Övr;2;0.18;1;0.09;0.08
+Kommun;12820103;Norra Förstaden;S;433;37.42;320;30.16;7.26
+Kommun;12820103;Norra Förstaden;M;50;4.32;49;4.62;-0.3
+Kommun;12820103;Norra Förstaden;SD;155;13.4;209;19.7;-6.3
+Kommun;12820103;Norra Förstaden;V;140;12.1;82;7.73;4.37
+Kommun;12820103;Norra Förstaden;L;280;24.2;292;27.52;-3.32
+Kommun;12820103;Norra Förstaden;C;12;1.04;18;1.7;-0.66
+Kommun;12820103;Norra Förstaden;KD;15;1.3;3;0.28;1.01
+Kommun;12820103;Norra Förstaden;MP;51;4.41;42;3.96;0.45
+Kommun;12820103;Norra Förstaden;Vi;13;1.12;0;0.0;1.12
+Kommun;12820103;Norra Förstaden;Övr;8;0.69;46;4.34;-3.64
+Kommun;12820104;Centrum;S;322;27.69;215;24.83;2.86
+Kommun;12820104;Centrum;M;58;4.99;75;8.66;-3.67
+Kommun;12820104;Centrum;SD;183;15.74;174;20.09;-4.36
+Kommun;12820104;Centrum;V;101;8.68;68;7.85;0.83
+Kommun;12820104;Centrum;L;411;35.34;278;32.1;3.24
+Kommun;12820104;Centrum;C;12;1.03;15;1.73;-0.7
+Kommun;12820104;Centrum;KD;16;1.38;9;1.04;0.34
+Kommun;12820104;Centrum;MP;50;4.3;32;3.7;0.6
+Kommun;12820104;Centrum;Vi;9;0.77;0;0.0;0.77
+Kommun;12820104;Centrum;Övr;1;0.09;0;0.0;0.09
+Kommun;12820105;Dammhagen;S;413;41.09;278;33.13;7.96
+Kommun;12820105;Dammhagen;M;52;5.17;52;6.2;-1.02
+Kommun;12820105;Dammhagen;SD;107;10.65;170;20.26;-9.62
+Kommun;12820105;Dammhagen;V;182;18.11;83;9.89;8.22
+Kommun;12820105;Dammhagen;L;152;15.12;147;17.52;-2.4
+Kommun;12820105;Dammhagen;C;6;0.6;9;1.07;-0.48
+Kommun;12820105;Dammhagen;KD;7;0.7;3;0.36;0.34
+Kommun;12820105;Dammhagen;MP;47;4.68;32;3.81;0.86
+Kommun;12820105;Dammhagen;Vi;34;3.38;0;0.0;3.38
+Kommun;12820105;Dammhagen;Övr;5;0.5;65;7.75;-7.25
+Kommun;12820106;Gustav Adolf;S;391;36.92;337;33.9;3.02
+Kommun;12820106;Gustav Adolf;M;31;2.93;79;7.95;-5.02
+Kommun;12820106;Gustav Adolf;SD;117;11.05;161;16.2;-5.15
+Kommun;12820106;Gustav Adolf;V;140;13.22;64;6.44;6.78
+Kommun;12820106;Gustav Adolf;L;266;25.12;243;24.45;0.67
+Kommun;12820106;Gustav Adolf;C;5;0.47;11;1.11;-0.63
+Kommun;12820106;Gustav Adolf;KD;15;1.42;5;0.5;0.91
+Kommun;12820106;Gustav Adolf;MP;49;4.63;34;3.42;1.21
+Kommun;12820106;Gustav Adolf;Vi;37;3.49;0;0.0;3.49
+Kommun;12820106;Gustav Adolf;Övr;8;0.76;60;6.04;-5.28
+Kommun;12820107;S:t Olov;S;210;24.31;192;22.86;1.45
+Kommun;12820107;S:t Olov;M;28;3.24;32;3.81;-0.57
+Kommun;12820107;S:t Olov;SD;113;13.08;143;17.02;-3.95
+Kommun;12820107;S:t Olov;V;48;5.56;35;4.17;1.39
+Kommun;12820107;S:t Olov;L;397;45.95;370;44.05;1.9
+Kommun;12820107;S:t Olov;C;16;1.85;15;1.79;0.07
+Kommun;12820107;S:t Olov;KD;9;1.04;12;1.43;-0.39
+Kommun;12820107;S:t Olov;MP;38;4.4;40;4.76;-0.36
+Kommun;12820107;S:t Olov;Vi;3;0.35;0;0.0;0.35
+Kommun;12820107;S:t Olov;Övr;2;0.23;1;0.12;0.11
+Kommun;12820108;Albano;S;369;33.01;324;31.46;1.55
+Kommun;12820108;Albano;M;42;3.76;50;4.85;-1.1
+Kommun;12820108;Albano;SD;188;16.82;213;20.68;-3.86
+Kommun;12820108;Albano;V;91;8.14;60;5.83;2.31
+Kommun;12820108;Albano;L;326;29.16;279;27.09;2.07
+Kommun;12820108;Albano;C;15;1.34;12;1.17;0.18
+Kommun;12820108;Albano;KD;16;1.43;11;1.07;0.36
+Kommun;12820108;Albano;MP;50;4.47;52;5.05;-0.58
+Kommun;12820108;Albano;Vi;17;1.52;0;0.0;1.52
+Kommun;12820108;Albano;Övr;4;0.36;29;2.82;-2.46
+Kommun;12820109;Larvi;S;308;27.65;298;27.19;0.46
+Kommun;12820109;Larvi;M;53;4.76;62;5.66;-0.9
+Kommun;12820109;Larvi;SD;190;17.06;210;19.16;-2.1
+Kommun;12820109;Larvi;V;64;5.75;51;4.65;1.09
+Kommun;12820109;Larvi;L;423;37.97;400;36.5;1.47
+Kommun;12820109;Larvi;C;9;0.81;13;1.19;-0.38
+Kommun;12820109;Larvi;KD;10;0.9;11;1.0;-0.11
+Kommun;12820109;Larvi;MP;42;3.77;32;2.92;0.85
+Kommun;12820109;Larvi;Vi;11;0.99;0;0.0;0.99
+Kommun;12820109;Larvi;Övr;4;0.36;19;1.73;-1.37
+Kommun;12820110;Sandvången;S;255;32.4;270;34.53;-2.13
+Kommun;12820110;Sandvången;M;33;4.19;25;3.2;1.0
+Kommun;12820110;Sandvången;SD;184;23.38;231;29.54;-6.16
+Kommun;12820110;Sandvången;V;45;5.72;33;4.22;1.5
+Kommun;12820110;Sandvången;L;228;28.97;187;23.91;5.06
+Kommun;12820110;Sandvången;C;2;0.25;4;0.51;-0.26
+Kommun;12820110;Sandvången;KD;5;0.64;13;1.66;-1.03
+Kommun;12820110;Sandvången;MP;25;3.18;14;1.79;1.39
+Kommun;12820110;Sandvången;Vi;6;0.76;0;0.0;0.76
+Kommun;12820110;Sandvången;Övr;4;0.51;5;0.64;-0.13
+Kommun;12820111;Helgebröten;S;338;37.51;307;34.46;3.06
+Kommun;12820111;Helgebröten;M;25;2.77;36;4.04;-1.27
+Kommun;12820111;Helgebröten;SD;87;9.66;128;14.37;-4.71
+Kommun;12820111;Helgebröten;V;55;6.1;46;5.16;0.94
+Kommun;12820111;Helgebröten;L;343;38.07;327;36.7;1.37
+Kommun;12820111;Helgebröten;C;3;0.33;9;1.01;-0.68
+Kommun;12820111;Helgebröten;KD;7;0.78;8;0.9;-0.12
+Kommun;12820111;Helgebröten;MP;31;3.44;25;2.81;0.63
+Kommun;12820111;Helgebröten;Vi;11;1.22;0;0.0;1.22
+Kommun;12820111;Helgebröten;Övr;1;0.11;5;0.56;-0.45
+Kommun;12820112;Norrestad;S;427;40.51;303;37.73;2.78
+Kommun;12820112;Norrestad;M;27;2.56;27;3.36;-0.8
+Kommun;12820112;Norrestad;SD;120;11.39;105;13.08;-1.69
+Kommun;12820112;Norrestad;V;213;20.21;79;9.84;10.37
+Kommun;12820112;Norrestad;L;104;9.87;71;8.84;1.03
+Kommun;12820112;Norrestad;C;7;0.66;17;2.12;-1.45
+Kommun;12820112;Norrestad;KD;4;0.38;4;0.5;-0.12
+Kommun;12820112;Norrestad;MP;31;2.94;25;3.11;-0.17
+Kommun;12820112;Norrestad;Vi;117;11.1;0;0.0;11.1
+Kommun;12820112;Norrestad;Övr;4;0.38;172;21.42;-21.04
+Kommun;12820113;Karlslund;S;344;31.5;269;28.74;2.76
+Kommun;12820113;Karlslund;M;37;3.39;28;2.99;0.4
+Kommun;12820113;Karlslund;SD;108;9.89;153;16.35;-6.46
+Kommun;12820113;Karlslund;V;159;14.56;87;9.29;5.27
+Kommun;12820113;Karlslund;L;322;29.49;264;28.21;1.28
+Kommun;12820113;Karlslund;C;7;0.64;15;1.6;-0.96
+Kommun;12820113;Karlslund;KD;4;0.37;9;0.96;-0.6
+Kommun;12820113;Karlslund;MP;51;4.67;44;4.7;-0.03
+Kommun;12820113;Karlslund;Vi;57;5.22;0;0.0;5.22
+Kommun;12820113;Karlslund;Övr;3;0.27;67;7.16;-6.88
+Kommun;12820114;Västra Fäladen;S;415;33.44;378;32.2;1.24
+Kommun;12820114;Västra Fäladen;M;47;3.79;43;3.66;0.12
+Kommun;12820114;Västra Fäladen;SD;154;12.41;207;17.63;-5.22
+Kommun;12820114;Västra Fäladen;V;43;3.46;35;2.98;0.48
+Kommun;12820114;Västra Fäladen;L;526;42.39;449;38.25;4.14
+Kommun;12820114;Västra Fäladen;C;6;0.48;14;1.19;-0.71
+Kommun;12820114;Västra Fäladen;KD;14;1.13;15;1.28;-0.15
+Kommun;12820114;Västra Fäladen;MP;28;2.26;24;2.04;0.21
+Kommun;12820114;Västra Fäladen;Vi;5;0.4;0;0.0;0.4
+Kommun;12820114;Västra Fäladen;Övr;3;0.24;9;0.77;-0.52
+Kommun;12820115;Drottningen;S;316;23.02;318;22.24;0.78
+Kommun;12820115;Drottningen;M;52;3.79;54;3.78;0.01
+Kommun;12820115;Drottningen;SD;146;10.63;208;14.55;-3.91
+Kommun;12820115;Drottningen;V;13;0.95;19;1.33;-0.38
+Kommun;12820115;Drottningen;L;789;57.47;781;54.62;2.85
+Kommun;12820115;Drottningen;C;7;0.51;12;0.84;-0.33
+Kommun;12820115;Drottningen;KD;7;0.51;5;0.35;0.16
+Kommun;12820115;Drottningen;MP;35;2.55;27;1.89;0.66
+Kommun;12820115;Drottningen;Vi;4;0.29;0;0.0;0.29
+Kommun;12820115;Drottningen;Övr;4;0.29;6;0.42;-0.13
+Kommun;12820116;Svaneholm;S;180;11.9;192;12.51;-0.6
+Kommun;12820116;Svaneholm;M;84;5.56;89;5.8;-0.24
+Kommun;12820116;Svaneholm;SD;82;5.42;155;10.1;-4.67
+Kommun;12820116;Svaneholm;V;11;0.73;16;1.04;-0.31
+Kommun;12820116;Svaneholm;L;1081;71.49;1021;66.51;4.98
+Kommun;12820116;Svaneholm;C;16;1.06;16;1.04;0.02
+Kommun;12820116;Svaneholm;KD;1;0.07;5;0.33;-0.26
+Kommun;12820116;Svaneholm;MP;53;3.51;36;2.35;1.16
+Kommun;12820116;Svaneholm;Vi;0;0.0;0;0.0;0.0
+Kommun;12820116;Svaneholm;Övr;4;0.26;5;0.33;-0.06
+Kommun;12820117;Norra Borstahusen;S;117;12.34;67;9.8;2.55
+Kommun;12820117;Norra Borstahusen;M;45;4.75;39;5.7;-0.95
+Kommun;12820117;Norra Borstahusen;SD;35;3.69;54;7.89;-4.2
+Kommun;12820117;Norra Borstahusen;V;8;0.84;5;0.73;0.11
+Kommun;12820117;Norra Borstahusen;L;693;73.1;480;70.18;2.93
+Kommun;12820117;Norra Borstahusen;C;5;0.53;8;1.17;-0.64
+Kommun;12820117;Norra Borstahusen;KD;8;0.84;6;0.88;-0.03
+Kommun;12820117;Norra Borstahusen;MP;34;3.59;22;3.22;0.37
+Kommun;12820117;Norra Borstahusen;Vi;3;0.32;0;0.0;0.32
+Kommun;12820117;Norra Borstahusen;Övr;0;0.0;3;0.44;-0.44
+Kommun;12820118;Weibullsholm;S;324;33.61;261;29.29;4.32
+Kommun;12820118;Weibullsholm;M;30;3.11;51;5.72;-2.61
+Kommun;12820118;Weibullsholm;SD;131;13.59;171;19.19;-5.6
+Kommun;12820118;Weibullsholm;V;185;19.19;81;9.09;10.1
+Kommun;12820118;Weibullsholm;L;213;22.1;188;21.1;1.0
+Kommun;12820118;Weibullsholm;C;3;0.31;17;1.91;-1.6
+Kommun;12820118;Weibullsholm;KD;5;0.52;11;1.23;-0.72
+Kommun;12820118;Weibullsholm;MP;43;4.46;37;4.15;0.31
+Kommun;12820118;Weibullsholm;Vi;25;2.59;0;0.0;2.59
+Kommun;12820118;Weibullsholm;Övr;5;0.52;74;8.31;-7.79
+Kommun;12820201;Ven;S;54;19.42;37;12.25;7.17
+Kommun;12820201;Ven;M;41;14.75;36;11.92;2.83
+Kommun;12820201;Ven;SD;29;10.43;64;21.19;-10.76
+Kommun;12820201;Ven;V;7;2.52;16;5.3;-2.78
+Kommun;12820201;Ven;L;106;38.13;99;32.78;5.35
+Kommun;12820201;Ven;C;11;3.96;30;9.93;-5.98
+Kommun;12820201;Ven;KD;3;1.08;3;0.99;0.09
+Kommun;12820201;Ven;MP;26;9.35;15;4.97;4.39
+Kommun;12820201;Ven;Vi;0;0.0;0;0.0;0.0
+Kommun;12820201;Ven;Övr;1;0.36;2;0.66;-0.3
+Kommun;12820301;Annelöv;S;143;13.19;142;13.2;-0.01
+Kommun;12820301;Annelöv;M;113;10.42;115;10.69;-0.26
+Kommun;12820301;Annelöv;SD;238;21.96;317;29.46;-7.51
+Kommun;12820301;Annelöv;V;39;3.6;31;2.88;0.72
+Kommun;12820301;Annelöv;L;437;40.31;358;33.27;7.04
+Kommun;12820301;Annelöv;C;33;3.04;46;4.28;-1.23
+Kommun;12820301;Annelöv;KD;23;2.12;18;1.67;0.45
+Kommun;12820301;Annelöv;MP;53;4.89;46;4.28;0.61
+Kommun;12820301;Annelöv;Vi;2;0.18;0;0.0;0.18
+Kommun;12820301;Annelöv;Övr;3;0.28;3;0.28;-0.0
+Kommun;12820401;Häljarp Norra;S;269;18.84;203;14.22;4.62
+Kommun;12820401;Häljarp Norra;M;148;10.36;172;12.04;-1.68
+Kommun;12820401;Häljarp Norra;SD;277;19.4;345;24.16;-4.76
+Kommun;12820401;Häljarp Norra;V;34;2.38;24;1.68;0.7
+Kommun;12820401;Häljarp Norra;L;620;43.42;602;42.16;1.26
+Kommun;12820401;Häljarp Norra;C;12;0.84;19;1.33;-0.49
+Kommun;12820401;Häljarp Norra;KD;18;1.26;18;1.26;0.0
+Kommun;12820401;Häljarp Norra;MP;44;3.08;37;2.59;0.49
+Kommun;12820401;Häljarp Norra;Vi;3;0.21;0;0.0;0.21
+Kommun;12820401;Häljarp Norra;Övr;3;0.21;8;0.56;-0.35
+Kommun;12820402;Häljarp Södra;S;264;18.88;248;18.22;0.66
+Kommun;12820402;Häljarp Södra;M;120;8.58;161;11.83;-3.25
+Kommun;12820402;Häljarp Södra;SD;234;16.74;269;19.76;-3.03
+Kommun;12820402;Häljarp Södra;V;25;1.79;20;1.47;0.32
+Kommun;12820402;Häljarp Södra;L;671;48.0;583;42.84;5.16
+Kommun;12820402;Häljarp Södra;C;24;1.72;29;2.13;-0.41
+Kommun;12820402;Häljarp Södra;KD;13;0.93;14;1.03;-0.1
+Kommun;12820402;Häljarp Södra;MP;32;2.29;26;1.91;0.38
+Kommun;12820402;Häljarp Södra;Vi;7;0.5;0;0.0;0.5
+Kommun;12820402;Häljarp Södra;Övr;8;0.57;11;0.81;-0.24
+Kommun;12820501;Asmundtorp;S;242;17.25;235;16.49;0.76
+Kommun;12820501;Asmundtorp;M;156;11.12;169;11.86;-0.74
+Kommun;12820501;Asmundtorp;SD;289;20.6;363;25.47;-4.87
+Kommun;12820501;Asmundtorp;V;44;3.14;32;2.25;0.89
+Kommun;12820501;Asmundtorp;L;564;40.2;520;36.49;3.71
+Kommun;12820501;Asmundtorp;C;22;1.57;31;2.18;-0.61
+Kommun;12820501;Asmundtorp;KD;29;2.07;22;1.54;0.52
+Kommun;12820501;Asmundtorp;MP;45;3.21;41;2.88;0.33
+Kommun;12820501;Asmundtorp;Vi;7;0.5;0;0.0;0.5
+Kommun;12820501;Asmundtorp;Övr;5;0.36;12;0.84;-0.49
+Kommun;12820801;Härslöv;S;160;19.88;161;20.07;-0.2
+Kommun;12820801;Härslöv;M;64;7.95;59;7.36;0.59
+Kommun;12820801;Härslöv;SD;165;20.5;204;25.44;-4.94
+Kommun;12820801;Härslöv;V;34;4.22;20;2.49;1.73
+Kommun;12820801;Härslöv;L;307;38.14;286;35.66;2.48
+Kommun;12820801;Härslöv;C;24;2.98;26;3.24;-0.26
+Kommun;12820801;Härslöv;KD;7;0.87;15;1.87;-1.0
+Kommun;12820801;Härslöv;MP;20;2.48;24;2.99;-0.51
+Kommun;12820801;Härslöv;Vi;18;2.24;0;0.0;2.24
+Kommun;12820801;Härslöv;Övr;6;0.75;7;0.87;-0.13
+Kommun;12820802;Glumslöv Norra;S;164;15.05;163;15.38;-0.33
+Kommun;12820802;Glumslöv Norra;M;137;12.57;134;12.64;-0.07
+Kommun;12820802;Glumslöv Norra;SD;129;11.83;144;13.58;-1.75
+Kommun;12820802;Glumslöv Norra;V;12;1.1;23;2.17;-1.07
+Kommun;12820802;Glumslöv Norra;L;532;48.81;487;45.94;2.86
+Kommun;12820802;Glumslöv Norra;C;42;3.85;30;2.83;1.02
+Kommun;12820802;Glumslöv Norra;KD;17;1.56;28;2.64;-1.08
+Kommun;12820802;Glumslöv Norra;MP;44;4.04;36;3.4;0.64
+Kommun;12820802;Glumslöv Norra;Vi;0;0.0;0;0.0;0.0
+Kommun;12820802;Glumslöv Norra;Övr;13;1.19;15;1.42;-0.22
+Kommun;12820803;Glumslöv Södra;S;134;15.3;133;15.11;0.18
+Kommun;12820803;Glumslöv Södra;M;92;10.5;81;9.2;1.3
+Kommun;12820803;Glumslöv Södra;SD;108;12.33;119;13.52;-1.19
+Kommun;12820803;Glumslöv Södra;V;14;1.6;18;2.05;-0.45
+Kommun;12820803;Glumslöv Södra;L;456;52.05;445;50.57;1.49
+Kommun;12820803;Glumslöv Södra;C;26;2.97;22;2.5;0.47
+Kommun;12820803;Glumslöv Södra;KD;15;1.71;27;3.07;-1.36
+Kommun;12820803;Glumslöv Södra;MP;29;3.31;31;3.52;-0.21
+Kommun;12820803;Glumslöv Södra;Vi;2;0.23;0;0.0;0.23
+Kommun;12820803;Glumslöv Södra;Övr;0;0.0;4;0.45;-0.45
+Kommun;128200;Uppsamlingsdistrikt 00;S;204;25.92;;;
+Kommun;128200;Uppsamlingsdistrikt 00;M;68;8.64;;;
+Kommun;128200;Uppsamlingsdistrikt 00;SD;112;14.23;;;
+Kommun;128200;Uppsamlingsdistrikt 00;V;69;8.77;;;
+Kommun;128200;Uppsamlingsdistrikt 00;L;265;33.67;;;
+Kommun;128200;Uppsamlingsdistrikt 00;C;13;1.65;;;
+Kommun;128200;Uppsamlingsdistrikt 00;KD;11;1.4;;;
+Kommun;128200;Uppsamlingsdistrikt 00;MP;35;4.45;;;
+Kommun;128200;Uppsamlingsdistrikt 00;Vi;7;0.89;;;
+Kommun;128200;Uppsamlingsdistrikt 00;Övr;3;0.38;;;

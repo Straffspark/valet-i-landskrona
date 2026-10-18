@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valet i Landskrona</title>
+<meta name="description" content="Valresultat i Landskrona 2026 per valdistrikt, med karta, tidsserie 2006–2026 och bakgrundsdata från SCB.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Valet LK">
+<meta name="theme-color" content="#0f3a45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+/* Layout: one-screen app. Sticky top bar (title + val switch), scrolling view, bottom tab bar like a native iPhone app. */
+:root {
+  --ground: #eef2f3;      /* Öresund morning grey, tinted toward the sea */
+  --surface: #ffffff;
+  --ink: #12232a;
+  --ink-2: #4b5d64;
+  --line: #d5dee1;
+  --sea: #0f5d70;          /* harbour blue, the one accent */
+  --sea-soft: #d8e8ec;
+  --bar: #0f3a45;          /* top bar */
+  --bar-ink: #eef6f8;
+  --up: #1d7a55;
+  --down: #b4442f;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0d1719; --surface: #152427; --ink: #e5eef0; --ink-2: #9fb2b8; --line: #27393e;
+    --sea: #5fb7cc; --sea-soft: #173a43; --bar: #0a2a32; --bar-ink: #e5f2f5; --up: #4fc18f; --down: #ec8a72; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0d1719; --surface: #152427; --ink: #e5eef0; --ink-2: #9fb2b8; --line: #27393e;
+  --sea: #5fb7cc; --sea-soft: #173a43; --bar: #0a2a32; --bar-ink: #e5f2f5; --up: #4fc18f; --down: #ec8a72; color-scheme: dark;
+}
+html, body { height: 100%; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--ground); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45; -webkit-tap-highlight-color: transparent; }
+.app { height: 100%; height: 100dvh; display: flex; flex-direction: column; max-width: 760px; margin-inline: auto; }
+.top { position: sticky; top: 0; z-index: 5; background: var(--bar); color: var(--bar-ink); padding-top: calc(12px + env(safe-area-inset-top, 0px)); padding-bottom: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top h1 { margin: 0; font-family: var(--f-display); font-variation-settings: "wdth" 70; font-weight: 800; font-size: 1.55rem; letter-spacing: .01em; line-height: 1.1; text-wrap: balance; }
+.top .sub { font-family: var(--f-data); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-top: 2px; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,.1); border-radius: 10px; padding: 3px; margin-top: 10px; }
+.seg button { font: inherit; font-size: .82rem; font-weight: 600; color: var(--bar-ink); background: transparent; border: 0; border-radius: 8px; padding: 7px 4px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--bar-ink); color: var(--bar); }
+.seg button:focus-visible, .chip:focus-visible, .tabs button:focus-visible, .row:focus-visible, .lseg button:focus-visible { outline: 2px solid var(--sea); outline-offset: 2px; }
+main { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-block: 14px 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tabs { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--surface); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.tabs button { font: inherit; background: none; border: 0; color: var(--ink-2); padding: 8px 2px 9px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: .68rem; font-weight: 600; cursor: pointer; }
+.tabs button svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tabs button[aria-current="page"] { color: var(--sea); }
+.view { display: flex; flex-direction: column; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; min-width: 0; }
+.card h2 { margin: 0 0 2px; font-family: var(--f-display); font-variation-settings: "wdth" 78; font-weight: 750; font-size: 1.08rem; text-wrap: balance; }
+.note { color: var(--ink-2); font-size: .8rem; margin: 0 0 10px; }
+.eyebrow { font-family: var(--f-data); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-2); }
+.lead { font-size: 1rem; margin: 0; }
+.lead b { font-weight: 700; }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: 0 0 auto; font: inherit; font-size: .8rem; font-weight: 700; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 5px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.chip[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--surface); }
+.lseg { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.lseg button { font: inherit; font-size: .78rem; font-weight: 600; background: var(--surface); color: var(--ink); border: 0; padding: 6px 10px; cursor: pointer; }
+.lseg button[aria-pressed="true"] { background: var(--sea); color: var(--surface); }
+.ctrl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+/* party result rows */
+.bars { display: flex; flex-direction: column; gap: 9px; }
+.br { display: grid; grid-template-columns: 2.4rem 1fr 3.6rem 3.4rem; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.br .p { font-weight: 800; font-size: .85rem; }
+.br .track { position: relative; height: 14px; background: var(--sea-soft); border-radius: 4px; }
+.br .fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; }
+.br .tick { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); border-radius: 1px; }
+.br .v { text-align: right; font-weight: 700; font-family: var(--f-data); font-size: .85rem; }
+.br .d { text-align: right; font-family: var(--f-data); font-size: .74rem; }
+.up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--ink-2); }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
+.kpi .n { font-family: var(--f-display); font-variation-settings: "wdth" 66; font-weight: 800; font-size: 1.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: .7rem; color: var(--ink-2); margin-top: 4px; line-height: 1.25; }
+.seats { display: flex; height: 26px; border-radius: 6px; overflow: hidden; gap: 1px; }
+.seats div { display: flex; align-items: center; justify-content: center; font-size: .66rem; font-weight: 800; color: #fff; min-width: 0; white-space: nowrap; overflow: hidden; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .74rem; color: var(--ink-2); margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+svg text { font-family: var(--f-body); }
+.axis { fill: var(--ink-2); font-size: 10px; font-family: var(--f-data); }
+.grid { stroke: var(--line); stroke-width: 1; }
+.mapwrap { position: relative; max-width: 520px; margin-inline: auto; }
+.map path { stroke: var(--surface); stroke-width: .8px; vector-effect: non-scaling-stroke; cursor: pointer; }
+.map path.sel { stroke: var(--ink); stroke-width: 2.2px; }
+.ramp { display: flex; align-items: center; gap: 8px; font-family: var(--f-data); font-size: .7rem; color: var(--ink-2); margin-top: 8px; }
+.ramp div { flex: 1; height: 8px; border-radius: 4px; }
+.sheet { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; }
+.sheet h3 { margin: 0 0 8px; font-family: var(--f-display); font-variation-settings: "wdth" 78; font-size: 1rem; }
+.list { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 1fr 5.2rem 3.2rem; gap: 8px; align-items: center; padding: 9px 2px; border-bottom: 1px solid var(--line); background: none; border-left: 0; border-right: 0; border-top: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; font-variant-numeric: tabular-nums; }
+.row .nm { font-weight: 600; font-size: .9rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .mini { height: 8px; background: var(--sea-soft); border-radius: 4px; position: relative; }
+.row .mini div { position: absolute; inset: 0 auto 0 0; border-radius: 4px; }
+.row .val { text-align: right; font-family: var(--f-data); font-size: .82rem; font-weight: 500; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .78rem; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 6px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { font-family: var(--f-data); font-weight: 500; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-2); }
+select { font: inherit; font-size: .85rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 6px 8px; max-width: 100%; }
+.foot { color: var(--ink-2); font-size: .72rem; line-height: 1.5; }
+@media (prefers-reduced-motion: no-preference) { .fill, .row .mini div { transition: width .35s ease; } }
+.foot a { color: var(--sea); }
+.dl { display: flex; flex-wrap: wrap; gap: 8px; }
+.dl a { flex: 1 1 9rem; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: .82rem; font-weight: 600; }
+.dl a span { display: block; font-family: var(--f-data); font-weight: 400; font-size: .68rem; color: var(--ink-2); margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="top">
+    <h1>Valet i Landskrona</h1>
+    <div class="sub" id="sub">Slutligt resultat · 13 september 2026</div>
+    <div class="seg" id="valseg" role="group" aria-label="Val">
+      <button id="v-KF" data-v="KF">Kommun</button><button id="v-RF" data-v="RF">Region</button><button id="v-RD" data-v="RD">Riksdag</button>
+    </div>
+  </header>
+  <main id="main"></main>
+  <nav class="tabs" aria-label="Vyer">
+    <button id="t-oversikt" data-t="oversikt"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Översikt</button>
+    <button id="t-karta" data-t="karta"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Karta</button>
+    <button id="t-historik" data-t="historik"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4M3 21h18"/></svg>2006–2026</button>
+    <button id="t-distrikt" data-t="distrikt"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Distrikt</button>
+    <button id="t-bakgrund" data-t="bakgrund"><svg viewBox="0 0 24 24"><circle cx="7" cy="15" r="1.6"/><circle cx="11" cy="10" r="1.6"/><circle cx="16" cy="12" r="1.6"/><circle cx="19" cy="6" r="1.6"/><path d="M3 21h18M3 21V3"/></svg>Bakgrund</button>
+  </nav>
+</div>
+
+<script src="data.js"></script>
+<script>
+(() => {
+  const L = window.LK;
+  const C = {S:'#E8112D', M:'#4FB3E3', SD:'#C9B400', V:'#9B1B1F', L:'#006AB3', C:'#009933', KD:'#2C3E8C', MP:'#5DA82B', Vi:'#8A5CC2', 'Övr':'#9A9A9A', PNy:'#7a7a7a'};
+  const NAME = {S:'Socialdemokraterna', M:'Moderaterna', SD:'Sverigedemokraterna', V:'Vänsterpartiet', L:'Liberalerna', C:'Centerpartiet', KD:'Kristdemokraterna', MP:'Miljöpartiet', Vi:'Visionpartiet', 'Övr':'Övriga', PNy:'Partiet Nyans'};
+  const VALN = {KF:'kommunvalet', RF:'regionvalet', RD:'riksdagsvalet'};
+  const YRS = [2006, 2010, 2014, 2018, 2022, 2026];
+  const PARTS = ['S', 'SD', 'M', 'L', 'V', 'KD', 'C', 'MP', 'Vi'];
+  const AREAS = ['Landskrona stad', 'Annelöv–Häljarp–Asmundtorp', 'Glumslöv–Härslöv', 'Ven'];
+  const DASH = {'Landskrona stad': '', 'Annelöv–Häljarp–Asmundtorp': '6 4', 'Glumslöv–Härslöv': '2 3', 'Ven': '9 3 2 3'};
+  const BAK = {utrikes_fodda: 'Utrikes födda', lag_inkomst: 'Låg inkomst (kvintil 1)', hog_inkomst: 'Hög inkomst (kvintil 5)', eftergymn_utb: 'Eftergymnasial utb. ≥3 år', alder_18_29: 'Ålder 18–29', alder_65plus: 'Ålder 65+'};
+  const f1 = (v) => (v == null ? '–' : v.toFixed(1).replace('.', ',').replace('-', '−'));
+  const fs = (v) => (v == null ? '' : (v > 0.05 ? '+' : v < -0.05 ? '−' : '±') + Math.abs(v).toFixed(1).replace('.', ','));
+  const cls = (v) => (v > 0.05 ? 'up' : v < -0.05 ? 'down' : 'flat');
+  const fi = (v) => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const store = {get(k, d) { try { const v = localStorage.getItem('lk.' + k); return v == null ? d : v; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem('lk.' + k, v); } catch (e) {} }};
+  const VIEWS = ['oversikt', 'karta', 'historik', 'distrikt', 'bakgrund'];
+  const hash = location.hash.slice(1);
+  const st = {view: VIEWS.includes(hash) ? hash : store.get('view', 'oversikt'), val: store.get('val', 'KF'), parti: store.get('parti', 'L'), visa: store.get('visa', 'andel'), zoom: store.get('zoom', 'stad'), bak: store.get('bak', 'utrikes_fodda'), sel: null, sort: 'andel'};
+  if (!['KF', 'RF', 'RD'].includes(st.val)) st.val = 'KF';
+  if (!PARTS.includes(st.parti) || (st.parti === 'Vi' && st.val !== 'KF')) st.parti = 'L';
+  if (!BAK[st.bak]) st.bak = 'utrikes_fodda';
+  const set = (o) => { Object.assign(st, o); if (st.parti === 'Vi' && st.val !== 'KF') st.parti = 'L'; ['view', 'val', 'parti', 'visa', 'zoom', 'bak'].forEach((k) => store.set(k, st[k])); render(); };
+  const main = document.getElementById('main');
+  document.querySelectorAll('#valseg button').forEach((b) => b.addEventListener('click', () => set({val: b.dataset.v})));
+  document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => { set({view: b.dataset.t}); main.scrollTop = 0; try { history.replaceState(null, '', '#' + b.dataset.t); } catch (e) {} }));
+  const parties = () => PARTS.filter((p) => st.val === 'KF' || p !== 'Vi');
+  const chips = (id) => `<div class="chips" id="${id}" role="group" aria-label="Parti">${parties().map((p) => `<button class="chip" id="${id}-${p}" data-p="${p}" aria-pressed="${p === st.parti}"><i style="background:${C[p]}"></i>${p}</button>`).join('')}</div>`;
+  const bindChips = (id) => main.querySelectorAll('#' + id + ' .chip').forEach((b) => b.addEventListener('click', () => set({parti: b.dataset.p})));
+  const lseg = (id, key, opts) => `<div class="lseg" id="${id}" role="group">${opts.map(([v, t]) => `<button id="${id}-${v}" data-v="${v}" aria-pressed="${st[key] === v}">${t}</button>`).join('')}</div>`;
+  const bindLseg = (id, key) => main.querySelectorAll('#' + id + ' button').forEach((b) => b.addEventListener('click', () => set({[key]: b.dataset.v})));
+  const W = () => Math.max(280, Math.min(main.clientWidth - 2 * 16 - 30, 700));
+  const kom = () => L.R[st.val]['1282'];
+  const districts = () => Object.entries(L.R[st.val]).filter(([k]) => k !== '1282').map(([k, d]) => ({kod: k, ...d}));
+
+  // --------- line chart helper
+  function lineChart({w, h, series, ymax, ylabel = '%', yMin = 0}) {
+    const m = {t: 10, r: 44, b: 22, l: 30};
+    const x = (i) => m.l + i * (w - m.l - m.r) / (YRS.length - 1);
+    const top = ymax || Math.max(...series.flatMap((s) => s.v.filter((v) => v != null)));
+    const step = top > 30 ? 10 : top > 12 ? 5 : top > 6 ? 2 : 1;
+    const ym = Math.ceil(top / step) * step;
+    const y = (v) => m.t + (h - m.t - m.b) * (1 - (v - yMin) / (ym - yMin));
+    let s = `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img">`;
+    for (let t = yMin; t <= ym + 0.01; t += step) s += `<line class="grid" x1="${m.l}" x2="${w - m.r}" y1="${y(t)}" y2="${y(t)}"/><text class="axis" x="${m.l - 5}" y="${y(t) + 3}" text-anchor="end">${t}</text>`;
+    YRS.forEach((yr, i) => { s += `<text class="axis" x="${x(i)}" y="${h - 6}" text-anchor="middle">${i === 0 || i === YRS.length - 1 || w > 360 ? yr : "'" + String(yr).slice(2)}</text>`; });
+    const ends = [];
+    series.forEach((se) => {
+      const pts = se.v.map((v, i) => (v == null ? null : [x(i), y(v)]));
+      let d = ''; pts.forEach((p, i) => { if (!p) return; d += (d && pts[i - 1] ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); });
+      s += `<path d="${d}" fill="none" stroke="${se.c}" stroke-width="${se.w || 2}" stroke-opacity="${se.o ?? 1}" stroke-linecap="round" stroke-linejoin="round" ${se.dash ? `stroke-dasharray="${se.dash}"` : ''}/>`;
+      pts.forEach((p) => { if (p && se.dots !== false) s += `<circle cx="${p[0]}" cy="${p[1]}" r="${se.w > 2 ? 3.2 : 2.2}" fill="${se.c}" fill-opacity="${se.o ?? 1}"/>`; });
+      const li = se.v.map((v, i) => (v == null ? -1 : i)).filter((i) => i >= 0).pop();
+      if (se.label && li != null && li >= 0) ends.push({y: y(se.v[li]), t: se.label, c: se.c, b: se.w > 2});
+    });
+    ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 11) ends[i].y = ends[i - 1].y + 11;
+    ends.forEach((e) => { s += `<text x="${w - m.r + 5}" y="${e.y + 3.5}" font-size="10" font-weight="${e.b ? 800 : 600}" fill="var(--ink)">${esc(e.t)}</text>`; });
+    return s + '</svg>';
+  }
+
+  // --------- views
+  function oversikt() {
+    const k = kom();
+    const rows = PARTS.filter((p) => k.p[p]).map((p) => ({p, a: k.p[p][0], b: k.p[p][1], n: k.p[p][2]})).sort((a, b) => b.a - a.a);
+    const mx = Math.max(...rows.map((r) => Math.max(r.a, r.b)));
+    const top = rows[0];
+    const L26 = L.R.KF['1282'].p.L[0], LRD = L.R.RD['1282'].p.L[0];
+    const lead = st.val === 'KF'
+      ? `Liberalerna fick <b>${f1(L26)} %</b> i kommunvalet – men bara ${f1(LRD)} % i riksdagsvalet. L, M och MP har egen majoritet med 32 av 61 mandat.`
+      : `<b>${NAME[top.p]}</b> blev största parti i ${VALN[st.val]} med ${f1(top.a)} %. SD backade ${fs(k.p.SD[0] - k.p.SD[1]).replace('−', '')} procentenheter${k.p.V ? ' och V ökade ' + fs(k.p.V[0] - k.p.V[1]).replace('+', '') : ''}.`;
+    const vdDiff = k.vd - k.vd22;
+    let html = `<div class="view">
+      <div class="card"><div class="eyebrow">${VALN[st.val][0].toUpperCase() + VALN[st.val].slice(1)} 2026</div><p class="lead">${lead}</p></div>
+      <div class="kpis">
+        <div class="kpi"><div class="n">${f1(top.a)}</div><div class="l">% för ${top.p}, störst</div></div>
+        <div class="kpi"><div class="n">${f1(k.vd)}</div><div class="l">% valdeltagande <span class="${cls(vdDiff)}">${fs(vdDiff)}</span></div></div>
+        <div class="kpi"><div class="n">${fi(k.g)}</div><div class="l">giltiga röster</div></div>
+      </div>
+      <div class="card"><h2>Partiernas andel</h2><p class="note">Stapel = 2026, svart streck = 2022. Förändring i procentenheter.</p><div class="bars">`;
+    rows.forEach((r) => { html += `<div class="br"><span class="p" style="color:${r.p === 'SD' ? 'var(--ink)' : C[r.p]}">${r.p}</span><div class="track"><div class="fill" style="width:${100 * r.a / mx}%;background:${C[r.p]}"></div>${r.b ? `<div class="tick" style="left:calc(${100 * r.b / mx}% - 1px)"></div>` : ''}</div><span class="v">${f1(r.a)}</span><span class="d ${cls(r.a - r.b)}">${fs(r.a - r.b)}</span></div>`; });
+    html += `</div></div>`;
+    if (st.val === 'KF') {
+      const m26 = L.HM['2026'], m22 = L.HM['2022'];
+      const order = ['V', 'S', 'MP', 'C', 'PNy', 'L', 'M', 'KD', 'SD'];
+      const strip = (m, tot) => `<div class="seats">${order.filter((p) => m[p]).map((p) => `<div style="flex:${m[p]};background:${C[p]};${p === 'SD' || p === 'M' ? 'color:#12232a' : ''}">${m[p] >= 3 ? p + ' ' + m[p] : ''}</div>`).join('')}</div>`;
+      html += `<div class="card"><h2>Mandat i kommunfullmäktige</h2><p class="note">61 platser 2026 (51 tidigare). Majoritet = 31.</p><div class="eyebrow" style="margin-bottom:4px">2026</div>${strip(m26)}<div class="eyebrow" style="margin:10px 0 4px">2022</div>${strip(m22)}
+        <div class="legend">${order.filter((p) => m26[p] || m22[p]).map((p) => `<span><i style="background:${C[p]}"></i>${p} ${m26[p] || 0}${(m26[p] || 0) - (m22[p] || 0) ? ' (' + ((m26[p] || 0) - (m22[p] || 0) > 0 ? '+' : '−') + Math.abs((m26[p] || 0) - (m22[p] || 0)) + ')' : ''}</span>`).join('')}</div></div>`;
+    }
+    html += `<div class="card"><h2>Röstdelning</h2><p class="note">Samma väljare, olika val. Andel 2026 i hela Landskrona.</p><div class="tbl"><table><thead><tr><th>Parti</th><th>Kommun</th><th>Region</th><th>Riksdag</th></tr></thead><tbody>${['L', 'S', 'SD', 'M', 'V', 'KD', 'C', 'MP'].map((p) => `<tr><td><b style="color:${p === 'SD' ? 'var(--ink)' : C[p]}">${p}</b> ${NAME[p]}</td>${['KF', 'RF', 'RD'].map((v) => `<td>${f1(L.R[v]['1282'].p[p][0])}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
+    html += `<div class="card"><h2>Ladda ner</h2><p class="note">Rådata och rapport med hela tidsserien 2006–2026.</p><div class="dl"><a href="nedladdning/Landskrona_val2026_radata.xlsx" download>Rådata<span>Excel · alla val och distrikt</span></a><a href="nedladdning/Valet_2026_i_Landskrona_rapport.docx" download>Rapport<span>Word · 21 sidor</span></a><a href="nedladdning/landskrona_val2026_parti_per_distrikt.csv" download>Distrikt 2026<span>CSV · semikolonseparerad</span></a></div></div>`;
+    return html + `<p class="foot">Källa: <a href="https://www.val.se/valresultat-och-statistik/statistik-och-data/radata-val-2026" target="_blank" rel="noopener">Valmyndigheten</a>, slutligt valresultat per valdistrikt, och <a href="https://www.scb.se/me0104" target="_blank" rel="noopener">SCB</a>. Region = Landskronas röster i regionvalet (Region Skåne).</p></div>`;
+  }
+
+  function polys(path) { return path.split('M').slice(1).map((seg) => seg.replace('Z', '').split('L').map((xy) => xy.split(',').map(Number))); }
+  let townBox = null;
+  function karta() {
+    const ds = districts();
+    const val = (d) => (d.p[st.parti] ? (st.visa === 'andel' ? d.p[st.parti][0] : d.p[st.parti][0] - d.p[st.parti][1]) : 0);
+    const vals = ds.map(val);
+    const panel = getComputedStyle(document.documentElement).getPropertyValue('--sea-soft').trim();
+    let col, lo, hi;
+    const mix = (a, b, t) => { const pa = hex(a), pb = hex(b); return `rgb(${pa.map((x, i) => Math.round(x + (pb[i] - x) * t)).join(',')})`; };
+    const hex = (h) => { h = h.trim(); if (h.startsWith('rgb')) return h.match(/\d+/g).slice(0, 3).map(Number); h = h.replace('#', ''); if (h.length === 3) h = h.split('').map((c) => c + c).join(''); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)); };
+    const base = getComputedStyle(document.documentElement).getPropertyValue('--surface').trim() || '#ffffff';
+    if (st.visa === 'andel') { hi = Math.max(...vals); lo = 0; col = (v) => mix(base, C[st.parti], 0.08 + 0.92 * v / hi); }
+    else { hi = Math.max(1, ...vals.map(Math.abs)); lo = -hi; col = (v) => (v < 0 ? mix(base, '#C4504A', Math.min(1, -v / hi)) : mix(base, '#2F7F8F', Math.min(1, v / hi))); }
+    const M = L.M;
+    if (!townBox) { const pts = Object.entries(M.p).filter(([k]) => k.startsWith('01')).flatMap(([, p]) => polys(p).flat()); const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]); townBox = [Math.min(...xs) - 3, Math.min(...ys) - 3, Math.max(...xs) - Math.min(...xs) + 6, Math.max(...ys) - Math.min(...ys) + 6]; }
+    const vb = st.zoom === 'stad' ? townBox : [0, 0, M.w, M.h];
+    let svg = `<svg class="map" viewBox="${vb.join(' ')}" width="100%" role="img" aria-label="Karta">`;
+    Object.entries(M.p).forEach(([k, p]) => { const d = L.R[st.val][k]; const inTown = k.startsWith('01'); svg += `<path id="m-${k}" data-k="${k}" d="${p}" fill="${d ? col(val({p: d.p})) : 'var(--line)'}" ${st.zoom === 'stad' && !inTown ? 'fill-opacity=".35"' : ''} class="${st.sel === k ? 'sel' : ''}"/>`; });
+    if (st.zoom === 'stad') Object.entries(M.p).filter(([k]) => k.startsWith('01')).forEach(([k, p]) => { const pts = polys(p).flat(); const cx = pts.reduce((s, q) => s + q[0], 0) / pts.length, cy = pts.reduce((s, q) => s + q[1], 0) / pts.length; svg += `<text x="${cx}" y="${cy}" text-anchor="middle" font-size="${vb[2] / 40}" fill="var(--ink)" stroke="var(--surface)" stroke-width="${vb[2] / 260}" paint-order="stroke" pointer-events="none">${esc(L.R.KF[k].n)}</text>`; });
+    svg += '</svg>';
+    const rampCols = st.visa === 'andel' ? [col(0), col(hi / 2), col(hi)] : [col(lo), col(0), col(hi)];
+    let html = `<div class="view"><div class="card"><div class="ctrl" style="margin-bottom:10px">${lseg('zoom', 'zoom', [['stad', 'Staden'], ['hela', 'Hela kommunen']])}${lseg('visa', 'visa', [['andel', 'Andel'], ['diff', 'Förändring']])}</div>${chips('kchips')}
+      <h2 style="margin-top:10px">${NAME[st.parti]} i ${VALN[st.val]}</h2><p class="note">${st.visa === 'andel' ? 'Andel 2026 per valdistrikt.' : 'Förändring 2022–2026 i procentenheter.'} Tryck på ett distrikt.</p>
+      <div class="mapwrap">${svg}</div><div class="ramp"><span>${st.visa === 'andel' ? '0 %' : fs(lo)}</span><div style="background:linear-gradient(90deg,${rampCols.join(',')})"></div><span>${st.visa === 'andel' ? f1(hi) + ' %' : fs(hi)}</span></div>
+      ${st.sel ? detail(st.sel) : ''}</div></div>`;
+    return html;
+  }
+  function detail(k) {
+    const d = L.R[st.val][k]; if (!d) return '';
+    const rows = PARTS.filter((p) => d.p[p]).map((p) => [p, d.p[p][0], d.p[p][1]]).sort((a, b) => b[1] - a[1]);
+    const s = L.S[k];
+    const hx = (L.HX[st.val][st.parti] || {})[d.n];
+    return `<div class="sheet" id="detalj"><h3>${esc(d.n)}</h3><p class="note">Valdeltagande ${f1(d.vd)} % (${fs(d.vd - d.vd22)}) · ${fi(d.rb)} röstberättigade</p>
+      <div class="tbl"><table><thead><tr><th>Parti</th><th>2026</th><th>2022</th><th>+/−</th></tr></thead><tbody>${rows.map(([p, a, b]) => `<tr><td><b style="color:${p === 'SD' ? 'var(--ink)' : C[p]}">${p}</b></td><td>${f1(a)}</td><td>${f1(b)}</td><td class="${cls(a - b)}">${fs(a - b)}</td></tr>`).join('')}</tbody></table></div>
+      ${hx ? `<p class="note" style="margin-top:10px">${st.parti} i ${VALN[st.val]} 2010–2026: ${hx.map((v, i) => [2010, 2014, 2018, 2022, 2026][i] + ' ' + f1(v)).join(' · ')}</p>` : ''}
+      ${s ? `<p class="note">Utrikes födda ${f1(s.utrikes_fodda)} % · Hög inkomst ${f1(s.hog_inkomst)} % · Eftergymn. ${f1(s.eftergymn_utb)} % · 65+ ${f1(s.alder_65plus)} %</p>` : ''}</div>`;
+  }
+
+  function historik() {
+    const w = W();
+    const hk = L.HK[st.val];
+    const series = parties().filter((p) => hk[p]).map((p) => ({c: C[p], v: hk[p], w: p === st.parti ? 3.2 : 1.5, o: p === st.parti ? 1 : .5, label: p === st.parti || ['S', 'SD', 'M', 'L'].includes(p) ? p + ' ' + f1(hk[p][5]) : null}));
+    series.sort((a, b) => a.w - b.w);
+    const vd = ['KF', 'RF', 'RD'].map((v, i) => ({c: ['#e8590c', '#2b8a3e', '#3b5bdb'][i], v: L.HD[v], w: 2, label: {KF: 'Kommun', RF: 'Region', RD: 'Riksdag'}[v]}));
+    const ar = L.HO[st.val];
+    const areaS = AREAS.map((a) => ({c: C[st.parti], v: (ar[a] || {})[st.parti] || [null, null, null, null, null, null], w: 2.2, dash: DASH[a]}));
+    const hm = L.HM; const order = ['V', 'S', 'MP', 'C', 'PNy', 'L', 'M', 'KD', 'SD'];
+    let mand = `<div style="display:grid;gap:6px">`;
+    YRS.forEach((y) => { const m = hm[String(y)]; const tot = Object.values(m).reduce((a, b) => a + b, 0); mand += `<div style="display:grid;grid-template-columns:2.6rem 1fr;gap:8px;align-items:center"><span class="eyebrow">${y}</span><div class="seats" style="width:${100 * tot / 61}%">${order.filter((p) => m[p]).map((p) => `<div style="flex:${m[p]};background:${C[p]};${p === 'SD' || p === 'M' ? 'color:#12232a' : ''}">${m[p] >= 5 ? p + ' ' + m[p] : ''}</div>`).join('')}</div></div>`; });
+    mand += '</div>';
+    return `<div class="view">
+      <div class="card"><h2>Partiernas andel 2006–2026</h2><p class="note">Hela Landskrona, ${VALN[st.val]}. FP redovisas som L. Valt parti markeras.</p>${chips('hchips')}<div style="margin-top:8px">${lineChart({w, h: 250, series})}</div></div>
+      <div class="card"><h2>Mandat i kommunfullmäktige</h2><p class="note">51 platser 2006–2022, 61 från 2026.</p>${mand}</div>
+      <div class="card"><h2>Valdeltagande</h2><p class="note">Procent av de röstberättigade.</p>${lineChart({w, h: 170, series: vd, ymax: 86, yMin: 70})}</div>
+      <div class="card"><h2>${NAME[st.parti]} i kommunens delar</h2><p class="note">${VALN[st.val][0].toUpperCase() + VALN[st.val].slice(1)}. Fyra delar med i stort sett oförändrade yttre gränser.</p>${areaS.some((s) => s.v.some((x) => x != null)) ? lineChart({w, h: 200, series: areaS}) : '<p class="note">Partiet ställde bara upp i kommunvalet 2026.</p>'}
+        <div class="legend">${AREAS.map((a) => `<span><svg width="22" height="8"><line x1="1" x2="21" y1="4" y2="4" stroke="${C[st.parti]}" stroke-width="2" ${DASH[a] ? `stroke-dasharray="${DASH[a]}"` : ''}/></svg>${a}</span>`).join('')}</div></div>
+      <p class="foot">Källa: Valmyndigheten, historik.val.se och resultat.val.se. Distriktsgränserna har ändrats mellan valen; kommuntotalerna är exakta.</p></div>`;
+  }
+
+  function distrikt() {
+    const ds = districts().map((d) => ({...d, a: d.p[st.parti] ? d.p[st.parti][0] : 0, ch: d.p[st.parti] ? d.p[st.parti][0] - d.p[st.parti][1] : 0}));
+    const key = st.sort;
+    ds.sort((a, b) => (key === 'namn' ? a.n.localeCompare(b.n, 'sv') : key === 'vd' ? b.vd - a.vd : key === 'ch' ? b.ch - a.ch : b.a - a.a));
+    const mx = Math.max(...ds.map((d) => d.a));
+    const hx = (L.HX[st.val] || {})[st.parti] || {};
+    return `<div class="view"><div class="card">${chips('dchips')}<div class="ctrl" style="margin-top:10px"><h2>${NAME[st.parti]} per distrikt</h2>${lseg('sort', 'sort', [['andel', 'Andel'], ['ch', '+/−'], ['vd', 'Deltag.'], ['namn', 'A–Ö']])}</div>
+      <p class="note">${VALN[st.val][0].toUpperCase() + VALN[st.val].slice(1)} 2026. Tryck för detaljer.</p><div class="list">${ds.map((d) => `<button class="row" id="r-${d.kod}" data-k="${d.kod}"><span class="nm">${esc(d.n)}</span><span class="mini"><div style="width:${100 * d.a / mx}%;background:${C[st.parti]}"></div></span><span class="val">${key === 'vd' ? f1(d.vd) : key === 'ch' ? `<span class="${cls(d.ch)}">${fs(d.ch)}</span>` : f1(d.a)}</span></button>${st.sel === d.kod ? detail(d.kod) : ''}`).join('')}</div></div>
+      <div class="card"><h2>Över tid, 2010–2026</h2><p class="note">${NAME[st.parti]} i distrikt med samma namn. Gränserna ändrades 2018 och 2022 – jämför med försiktighet.</p><div class="tbl"><table><thead><tr><th>Distrikt</th>${[2010, 2014, 2018, 2022, 2026].map((y) => `<th>${y}</th>`).join('')}</tr></thead><tbody>${Object.entries(hx).sort((a, b) => a[0].localeCompare(b[0], 'sv')).map(([n, v]) => `<tr><td>${esc(n)}</td>${v.map((x) => `<td>${f1(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div></div>`;
+  }
+
+  function corr(a, b) { const n = a.length, ma = a.reduce((s, x) => s + x, 0) / n, mb = b.reduce((s, x) => s + x, 0) / n; let ab = 0, aa = 0, bb = 0; for (let i = 0; i < n; i++) { ab += (a[i] - ma) * (b[i] - mb); aa += (a[i] - ma) ** 2; bb += (b[i] - mb) ** 2; } return ab / Math.sqrt(aa * bb); }
+  function bakgrund() {
+    const w = W(), h = 260, m = {t: 10, r: 10, b: 30, l: 34};
+    const ks = Object.keys(L.S);
+    const pts = ks.map((k) => ({k, n: L.R.KF[k].n, x: L.S[k][st.bak], y: (L.R[st.val][k].p[st.parti] || [0])[0]}));
+    const xm = Math.ceil(Math.max(...pts.map((p) => p.x)) / 10) * 10, ym = Math.ceil(Math.max(...pts.map((p) => p.y)) / 10) * 10 || 10;
+    const X = (v) => m.l + (w - m.l - m.r) * v / xm, Y = (v) => m.t + (h - m.t - m.b) * (1 - v / ym);
+    let s = `<svg viewBox="0 0 ${w} ${h}" width="100%">`;
+    for (let t = 0; t <= ym; t += ym > 40 ? 20 : 10) s += `<line class="grid" x1="${m.l}" x2="${w - m.r}" y1="${Y(t)}" y2="${Y(t)}"/><text class="axis" x="${m.l - 5}" y="${Y(t) + 3}" text-anchor="end">${t}</text>`;
+    for (let t = 0; t <= xm; t += xm > 40 ? 10 : 5) s += `<text class="axis" x="${X(t)}" y="${h - 16}" text-anchor="middle">${t}</text>`;
+    s += `<text class="axis" x="${w - m.r}" y="${h - 3}" text-anchor="end">${BAK[st.bak]} (%) →</text>`;
+    const r = corr(pts.map((p) => p.x), pts.map((p) => p.y));
+    const mx = pts.reduce((a, p) => a + p.x, 0) / pts.length, my = pts.reduce((a, p) => a + p.y, 0) / pts.length;
+    const b = pts.reduce((a, p) => a + (p.x - mx) * (p.y - my), 0) / pts.reduce((a, p) => a + (p.x - mx) ** 2, 0);
+    const cl = (v) => Math.max(0, Math.min(ym, v));
+    s += `<line x1="${X(0)}" x2="${X(xm)}" y1="${Y(cl(my - b * mx))}" y2="${Y(cl(my + b * (xm - mx)))}" stroke="var(--ink-2)" stroke-dasharray="4 4"/>`;
+    pts.forEach((p) => { s += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="4.5" fill="${C[st.parti]}" fill-opacity=".85" stroke="var(--surface)"><title>${esc(p.n)}: ${f1(p.y)} %</title></circle>`; });
+    const lab = [...pts].sort((a, b2) => b2.y - a.y); [lab[0], lab[lab.length - 1]].forEach((p) => { s += `<text x="${X(p.x) + (X(p.x) > w - 100 ? -7 : 7)}" y="${Y(p.y) + 3}" font-size="10" text-anchor="${X(p.x) > w - 100 ? 'end' : 'start'}" fill="var(--ink)">${esc(p.n)}</text>`; });
+    s += '</svg>';
+    const corrRows = Object.entries(BAK).map(([k, lab2]) => `<tr><td>${lab2}</td>${['S', 'SD', 'M', 'L', 'V'].map((p) => { const v = corr(ks.map((x) => L.S[x][k]), ks.map((x) => (L.R[st.val][x].p[p] || [0])[0])); const a = Math.abs(v); return `<td style="background:${v < 0 ? 'rgba(196,80,74,' : 'rgba(47,127,143,'}${(a * .55).toFixed(2)});${p === st.parti ? 'font-weight:700' : ''}">${v.toFixed(2).replace('.', ',').replace('-', '−')}</td>`; }).join('')}</tr>`).join('');
+    return `<div class="view"><div class="card">${chips('bchips')}<div style="margin-top:10px"><label for="bak" class="eyebrow">Bakgrund</label><br><select id="bak">${Object.entries(BAK).map(([k, v]) => `<option value="${k}" ${k === st.bak ? 'selected' : ''}>${v}</option>`).join('')}</select></div>
+      <h2 style="margin-top:10px">${NAME[st.parti]} och ${BAK[st.bak].toLowerCase()}</h2><p class="note">${VALN[st.val][0].toUpperCase() + VALN[st.val].slice(1)} 2026, ett distrikt per punkt. Korrelation r = ${r.toFixed(2).replace('.', ',').replace('-', '−')}.</p>${s}</div>
+      <div class="card"><h2>Samband, alla partier</h2><p class="note">r över de 26 distrikten i ${VALN[st.val]}. Blått = partiet starkare där andelen är hög, rött = svagare. Gäller distrikt, inte enskilda väljare.</p><div class="tbl"><table><thead><tr><th>Bakgrund</th><th>S</th><th>SD</th><th>M</th><th>L</th><th>V</th></tr></thead><tbody>${corrRows}</tbody></table></div></div>
+      <p class="foot">Källa: SCB:s valanalys för riksdagsvalet 2026 (röstberättigade i riksdagsvalet). Inkomst: 2024 års inkomster, rikets kvintiler.</p></div>`;
+  }
+
+  function render() {
+    document.querySelectorAll('#valseg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === st.val)));
+    document.querySelectorAll('.tabs button').forEach((b) => (b.dataset.t === st.view ? b.setAttribute('aria-current', 'page') : b.removeAttribute('aria-current')));
+    document.getElementById('sub').textContent = st.view === 'historik' ? 'Sex val · 2006–2026' : 'Slutligt resultat · 13 september 2026';
+    const scroll = main.scrollTop;
+    main.innerHTML = {oversikt, karta, historik, distrikt, bakgrund}[st.view]();
+    ['kchips', 'hchips', 'dchips', 'bchips'].forEach(bindChips);
+    bindLseg('zoom', 'zoom'); bindLseg('visa', 'visa'); bindLseg('sort', 'sort');
+    main.querySelectorAll('.map path').forEach((p) => p.addEventListener('click', () => set({sel: st.sel === p.dataset.k ? null : p.dataset.k})));
+    main.querySelectorAll('.row').forEach((r) => r.addEventListener('click', () => set({sel: st.sel === r.dataset.k ? null : r.dataset.k})));
+    const bak = document.getElementById('bak'); if (bak) bak.addEventListener('change', () => set({bak: bak.value}));
+    main.scrollTop = scroll;
+  }
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 150); });
+  render();
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+}
+</script>
+</body>
+</html>
